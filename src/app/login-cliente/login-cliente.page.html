@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons > 
+    <ion-buttons slot="end">
+      <ion-button routerLinks="/cadastro-cliente">cadastre-se
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <div id="header">
+   <h1>Login</h1>
+   <img src="assets/icon/icon-user.png">
+ </div>
+
+ <form id="#form">
+
+  <ion-item>
+    <ion-label position="floating">E-mail</ion-label>
+    <ion-input type="text"></ion-input>
+   <!-- formControlName="nome" = vinculei com o ts-->
+  </ion-item>
+
+  <ion-item id="input-top">
+    <ion-label position="floating" >Senha</ion-label>
+    <ion-input type="password" ></ion-input>
+   <!-- formControlName="nome" = vinculei com o ts-->
+  </ion-item>
+
+  <ion-button expand="block" shape="round">
+    Login
+  </ion-button>
+ </form>
+
+
+</ion-content>
