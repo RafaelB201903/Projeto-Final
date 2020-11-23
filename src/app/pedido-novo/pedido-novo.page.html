@@ -1,9 +1,60 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>pedido-novo</ion-title>
+    <ion-title >Agendamento</ion-title>
+    <ion-buttons slot="start">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons > 
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
+    
+   
+ 
+    <ion-card-header>
+      <ion-card-title id="titulo">Agendar banho e tosa</ion-card-title>
+      
+    </ion-card-header>
 
+    
+  
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input placeholder="Nome do pet" type="text"></ion-input>
+     <!-- formControlName="nome" = vinculei com o ts-->
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Tipo</ion-label>
+      <ion-input placeholder="Cão ou gato" type="text"></ion-input>
+     <!-- formControlName="nome" = vinculei com o ts-->
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Porte</ion-label>
+      <ion-input placeholder="Pequeno, médio ou grande" type="text"></ion-input>
+     <!-- formControlName="nome" = vinculei com o ts-->
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Tipo do Serviço</ion-label>
+      <ion-input placeholder="Banho, Tosa ou Banho e Tosa" type="text"></ion-input>
+     <!-- formControlName="nome" = vinculei com o ts-->
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Sexo</ion-label>
+      <ion-input placeholder="Macho ou Fêmea" type="text"></ion-input>
+     <!-- formControlName="nome" = vinculei com o ts-->
+    </ion-item>
+
+    <br>
+
+    <ion-button  expand="block">Agendar</ion-button>
+ 
+  
 </ion-content>

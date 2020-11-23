@@ -4,11 +4,47 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Tela Inicial</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button routerLinks="/cadastro-cliente">sair
+        <ion-icon name="exit-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+
+  <ion-card>
+    <img src="./assets/imagens/boasvindas.png" />
+    <ion-card-header>
+      <ion-card-title>Bem Vindo</ion-card-title>
+      <ion-card-subtitle>Resumo do nosso app</ion-card-subtitle>
+      
+    </ion-card-header>
+
+    <ion-card-content>
+      Nosso app é destinado a efetuar um agendamento de serviço (banho e tosa) com o petshop, você poderá efetuar agora mesmo um agendamento clicando no card abaixou ou 
+      deslizando a tela para direita e clicando na opção agendamento
+</ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="./assets/imagens/tomando-banho.jpg" />
+    <ion-card-header>
+      <ion-card-title>Agendar banho e tosa</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Clique no botão abaixo e agende agora mesmo seu serviço
+    </ion-card-content>
+      
+    <ion-button expand="block">Agendar</ion-button>
+ 
+  </ion-card>
+  
+  
   
 
 </ion-content>

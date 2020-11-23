@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
-      title: 'Fazer um pedido',
+      title: 'Agendar um pedido',
       url: '/pedido-novo',
       icon: 'clipboard'
     },
