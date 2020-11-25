@@ -1,26 +1,30 @@
 
 
 
-<ion-content>
+<ion-content id="content">
  <div id="header">
    
    <img src="assets/icon/lightpet-icon.png">
  </div>
 
- <ion-card>
+ <ion-card id=".slide">
 
   <!--<h1 style="text-align: center;">Logar</h1>-->
-
- <form id="#form">
+  <ion-card-content>
+ <form >
 
   <ion-item>
-    <ion-label position="floating">E-mail</ion-label>
+    <ion-label position="floating"><ion-icon name="mail-outline" item-start></ion-icon>
+    E-mail
+    </ion-label>
     <ion-input type="text"></ion-input>
    <!-- formControlName="nome" = vinculei com o ts-->
   </ion-item>
 
-  <ion-item id="input-top">
-    <ion-label position="floating" >Senha</ion-label>
+  <ion-item >
+    <ion-label position="floating" ><ion-icon name="key-outline" item-start></ion-icon>
+    Senha
+    </ion-label>
     <ion-input type="password" ></ion-input>
    <!-- formControlName="nome" = vinculei com o ts-->
   </ion-item>
@@ -28,12 +32,14 @@
   <ion-button expand="block" shape="round">
     Login
   </ion-button>
+  
  </form>
 
-  <p style="text-align: center;">Cadastre-se</p>
+  <p >Cadastre-se</p>
 
-  <p style="text-align: center;">Recuperar senha</p>
+  <p >Recuperar senha</p>
 
+</ion-card-content>
 </ion-card>
 
 </ion-content>
