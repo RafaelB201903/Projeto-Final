@@ -22,16 +22,12 @@ ion-content {
             font-weight: 700;
             font-size: 26px;
             color: #010100;
-            margin-bottom: 10%;
+            margin-top: 10%;
+            margin-bottom: 15%;
             font-family: 'Raleway', sans-serif;
         }
 
-        img {
-           width: 125px;
-           height: 125px;
-           border-radius: 50%;
-           border: 8px solid #ffffff;
-           }
+        
 
     }
 
@@ -39,9 +35,13 @@ ion-content {
        
         padding-left: 30px;
         padding-right: 30px;
+        
+        margin-top: auto;
+        margin-bottom: auto;
+        
     
        ion-button {
-           margin-top: 35px;
+           margin-top: 5%;
            height: 48px;
            font-size: 18px;
            text-transform: initial;
@@ -53,7 +53,7 @@ ion-content {
 
 
     #input {
-        padding-top: 5px;
+        //padding-top: 5px;
         
     }
 
@@ -72,4 +72,17 @@ ion-item {
   ion-button {
     --background: linear-gradient(to right,#92DE66 0%, #66DE86 100%);
     color: #4F4F4F;
+}
+
+p{
+    font-size: 14px;
+    color:inherit;
+    text-align: center;
+    color: #4F4F4F;
+
+    text-align: center;
+    padding-top: 1%;
+
+
+
 }

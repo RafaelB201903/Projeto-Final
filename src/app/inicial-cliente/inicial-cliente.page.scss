@@ -18,9 +18,9 @@ ion-content {
         
         margin-bottom: 30%;
         margin-top: 40%;
-        width: 200px;
-        height: 200px;
-        //border-radius: 50%;
+        width: 250px;
+        height: 210px;
+        //border-radius: 70%;
         //border: 5px solid #ffffff;
         }
     
@@ -33,6 +33,7 @@ ion-content {
             margin-left: auto;
             margin-right: auto;
 
+            
             width: 70%;
             height: 55px;
             font-size: 18px;
@@ -61,14 +62,19 @@ ion-content{
 ion-button {
     --background: linear-gradient(to right,#92DE66 0%, #66DE86 100%);
     color: #4F4F4F;
+    //color: #f1f1f1;
+
+    
 }
 
 
 
-p{
+
+
+p {
 text-align: center;
 padding-top: 2%;
-size: 10px;
-
+font-size: 14px;
+color:#4F4F4F;
 
 }
