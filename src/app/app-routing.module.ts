@@ -39,6 +39,10 @@ const routes: Routes = [
     path: 'dicas-pet',
     loadChildren: () => import('./dicas-pet/dicas-pet.module').then( m => m.DicasPetPageModule)
   },
+  {
+    path: 'inicial-cliente',
+    loadChildren: () => import('./inicial-cliente/inicial-cliente.module').then( m => m.InicialClientePageModule)
+  },
 ];
 
 @NgModule({
