@@ -41,6 +41,11 @@ export class AppComponent implements OnInit {
       title: 'Dicas para Pet',
       url: '/dicas-pet',
       icon: 'paw'
+    },
+    {
+      title: 'Configuração',
+      url: '/configuracao',
+      icon: 'build'
     }
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
