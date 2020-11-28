@@ -5,16 +5,14 @@
 
   <img src="assets/icon/logo-teste3.png">
 
-  <ion-button expand="block" shape="round">
+  <ion-button [routerLink]="['/login-cliente']" routerDirection="forward" expand="block" shape="round">
     Logar
   </ion-button>
 
   <P >Esqueceu sua senha ?</P>
 
-  <ion-button id="botao-cadastrar" expand="block" shape="round">
+  <ion-button [routerLink]="['/cadastro-cliente']" routerDirection="forward" id="botao-cadastrar" expand="block" shape="round">
     Cadastrar-se
   </ion-button>
-
-  
 
 </ion-content>

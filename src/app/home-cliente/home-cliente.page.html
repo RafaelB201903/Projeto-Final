@@ -32,6 +32,7 @@
 
   <ion-card>
     <img src="./assets/imagens/tomando-banho.jpg" />
+
     <ion-card-header>
       <ion-card-title>Verificar Petshops proximos</ion-card-title>
     </ion-card-header>
@@ -40,11 +41,9 @@
       Clique no botão abaixo e encrontre o Petshop mais proximo de sua casa.
     </ion-card-content>
       
-    <ion-button expand="block">Procurar</ion-button>
+    <ion-button (click)="goPage()" routerDirection="forward" expand="block">Procurar</ion-button>
  
   </ion-card>
-  
-  
-  
+
 
 </ion-content>
