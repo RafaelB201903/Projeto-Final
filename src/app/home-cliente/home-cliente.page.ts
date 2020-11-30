@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController, NavController } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-home-cliente',
@@ -8,13 +10,25 @@ import { Router } from '@angular/router';
 })
 export class HomeClientePage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private navCtrl : NavController,
+    private auth: AngularFireAuth,
+    private menuCtrl : MenuController) { }
 
   ngOnInit() {
+    
   }
 
   goPage() {
     this.router.navigate(['/pedido-novo'])
   }
 
+
+
+  logout(){
+    this.auth.signOut().then(data=>{
+      this.menuCtrl.enable(false);
+      this.navCtrl.navigateRoot(['/login-cliente']);
+    })
+  }
 }

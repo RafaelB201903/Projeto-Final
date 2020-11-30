@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'inicio-cliente',
+    redirectTo: 'inicial-cliente',
     pathMatch: 'full'
   },
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
   },
   {
     path: 'home-cliente',
-    loadChildren: () => import('./home-cliente/home-cliente.module').then( m => m.HomeClientePageModule)
+    loadChildren: () => import('./home-cliente/home-cliente.module').then( m => m.HomeClientePageModule),
+  
   },
   {
     path: 'pedido-novo',
@@ -46,6 +48,10 @@ const routes: Routes = [
   {
     path: 'configuracao',
     loadChildren: () => import('./configuracao/configuracao.module').then( m => m.ConfiguracaoPageModule)
+  },
+  {
+    path: 'sair-cliente',
+    loadChildren: () => import('./sair-cliente/sair-cliente.module').then( m => m.SairClientePageModule)
   },
 ];
 

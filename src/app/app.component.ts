@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
       icon: 'hourglass'
     },
     {
-      title: 'pedidos antigos',
+      title: 'pedidos finalizados',
       url: '/pedidos-finalizados',
       icon: 'folder'
     },
@@ -46,6 +46,11 @@ export class AppComponent implements OnInit {
       title: 'Configuração',
       url: '/configuracao',
       icon: 'build'
+    },
+    {
+      title: 'Deslogar',
+      url: '/sair-cliente',
+      icon: 'exit'
     }
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
