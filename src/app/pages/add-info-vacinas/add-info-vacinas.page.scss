@@ -1,0 +1,41 @@
+ion-toolbar{
+    --background:#66DE86;
+}
+
+ion-title {
+    color: floralwhite;
+}
+
+#start {
+    color:floralwhite;
+}
+
+
+:root {
+    --ion-safe-area-top: 20px;
+    --ion-safe-area-bottom: 22px;
+  }
+
+  ion-col > div {
+    background-color: #f7f7f7;
+    border: solid 1px #ddd;
+    padding: 10px;
+    
+  }
+
+  ion-col > #info {
+    background-color: #f7f7f7;
+    border: solid 1px #ddd;
+    
+    
+  }
+
+
+  ion-button {
+      margin-bottom: 10%;
+  }
+  
+  h1 {
+      text-align: center;
+      
+  }

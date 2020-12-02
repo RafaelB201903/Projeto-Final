@@ -26,10 +26,6 @@ const routes: Routes = [
     loadChildren: () => import('./pedido-novo/pedido-novo.module').then( m => m.PedidoNovoPageModule)
   },
   {
-    path: 'vacinacao',
-    loadChildren: () => import('./vacinacao/vacinacao.module').then( m => m.VacinacaoPageModule)
-  },
-  {
     path: 'dicas-pet',
     loadChildren: () => import('./dicas-pet/dicas-pet.module').then( m => m.DicasPetPageModule)
   },
@@ -52,6 +48,26 @@ const routes: Routes = [
   {
     path: 'perfil',
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'info-pet',
+    loadChildren: () => import('./pages/info-pet/info-pet.module').then( m => m.InfoPetPageModule)
+  },
+  {
+    path: 'add-info-vacinas',
+    loadChildren: () => import('./pages/add-info-vacinas/add-info-vacinas.module').then( m => m.AddInfoVacinasPageModule)
+  },
+  {
+    path: 'add-info-pet',
+    loadChildren: () => import('./pages/add-info-pet/add-info-pet.module').then( m => m.AddInfoPetPageModule)
+  },
+  {
+    path: 'info-vacinas',
+    loadChildren: () => import('./pages/info-vacinas/info-vacinas.module').then( m => m.InfoVacinasPageModule)
   },
 ];
 

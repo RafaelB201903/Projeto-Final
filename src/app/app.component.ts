@@ -28,9 +28,9 @@ export class AppComponent implements OnInit {
       icon: 'folder'
     },
     {
-      title: 'Vacinas',
-      url: '/vacinacao',
-      icon: 'trash'
+      title: 'Carteira de Vacinação',
+      url: '/tabs',
+      icon: 'reader'
     },
     {
       title: 'Dicas para Pet',
