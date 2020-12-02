@@ -23,13 +23,8 @@ export class AppComponent implements OnInit {
       icon: 'clipboard'
     },
     {
-      title: 'pedidos em andamento',
-      url: '/pedido-em-andamento',
-      icon: 'hourglass'
-    },
-    {
-      title: 'pedidos finalizados',
-      url: '/pedidos-finalizados',
+      title: 'Pedidos',
+      url: '/pedidos',
       icon: 'folder'
     },
     {
@@ -43,9 +38,9 @@ export class AppComponent implements OnInit {
       icon: 'paw'
     },
     {
-      title: 'Configuração',
-      url: '/configuracao',
-      icon: 'build'
+      title: 'perfil',
+      url: '/perfil',
+      icon: 'person'
     },
     {
       title: 'Deslogar',

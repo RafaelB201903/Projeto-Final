@@ -1,4 +1,8 @@
-#status {
+#status-finalizado {
+    color: #209e00;
+}
+
+#status-em-andamento{
     color: #ff2c2c;
 }
 
@@ -32,3 +36,21 @@ ion-title {
 #start {
     color:floralwhite;
 }
+
+ion-toolbar{
+    --background:#66DE86;
+}
+
+ion-title {
+    color: floralwhite;
+}
+
+#start {
+    color:floralwhite;
+}
+
+#last-button {
+    padding-left: 25%;
+    padding-right: 25%;
+
+}    

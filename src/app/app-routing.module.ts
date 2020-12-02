@@ -26,14 +26,6 @@ const routes: Routes = [
     loadChildren: () => import('./pedido-novo/pedido-novo.module').then( m => m.PedidoNovoPageModule)
   },
   {
-    path: 'pedido-em-andamento',
-    loadChildren: () => import('./pedido-em-andamento/pedido-em-andamento.module').then( m => m.PedidoEmAndamentoPageModule)
-  },
-  {
-    path: 'pedidos-finalizados',
-    loadChildren: () => import('./pedidos-finalizados/pedidos-finalizados.module').then( m => m.PedidosFinalizadosPageModule)
-  },
-  {
     path: 'vacinacao',
     loadChildren: () => import('./vacinacao/vacinacao.module').then( m => m.VacinacaoPageModule)
   },
@@ -46,12 +38,20 @@ const routes: Routes = [
     loadChildren: () => import('./inicial-cliente/inicial-cliente.module').then( m => m.InicialClientePageModule)
   },
   {
-    path: 'configuracao',
-    loadChildren: () => import('./configuracao/configuracao.module').then( m => m.ConfiguracaoPageModule)
-  },
-  {
     path: 'sair-cliente',
     loadChildren: () => import('./sair-cliente/sair-cliente.module').then( m => m.SairClientePageModule)
+  },
+  {
+    path: 'redefinir-senha',
+    loadChildren: () => import('./redefinir-senha/redefinir-senha.module').then( m => m.RedefinirSenhaPageModule)
+  },
+  {
+    path: 'pedidos',
+    loadChildren: () => import('./pedidos/pedidos.module').then( m => m.PedidosPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
 ];
 

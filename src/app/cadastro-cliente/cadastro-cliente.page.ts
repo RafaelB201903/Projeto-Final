@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MenuController, ToastController, NavParams, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cadastro-cliente',
@@ -8,7 +9,14 @@ import { MenuController } from '@ionic/angular';
 })
 export class CadastroClientePage implements OnInit {
 
-  constructor(private menuCtrl : MenuController) { }
+  @ViewChild('usuario') email;
+  @ViewChild('senha') senha;
+
+  constructor(public firebaseauth: AngularFireAuth,
+    public toastCtrl : ToastController,
+    public navParams: NavParams,
+    public menuCtrl: MenuController,
+    public navCtrl: NavController) { }
 
   ngOnInit() {
     this.menuCtrl.enable(false);

@@ -25,10 +25,5 @@ export class HomeClientePage implements OnInit {
 
 
 
-  logout(){
-    this.auth.signOut().then(data=>{
-      this.menuCtrl.enable(false);
-      this.navCtrl.navigateRoot(['/login-cliente']);
-    })
-  }
+  
 }
