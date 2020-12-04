@@ -1,8 +1,8 @@
-#status-finalizado {
+#finalizado {
     color: #209e00;
 }
 
-#status-em-andamento{
+#andamento{
     color: #ff2c2c;
 }
 
@@ -54,3 +54,16 @@ ion-title {
     padding-right: 25%;
 
 }    
+
+
+.flutuante{
+    margin: 0 5% 5% 5%;
+    float: left;
+    width: 100px;
+    height: 100px;
+    
+}
+
+ion-card-title{
+  text-align: center;
+}

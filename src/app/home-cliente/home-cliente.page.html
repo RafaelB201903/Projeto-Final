@@ -11,34 +11,51 @@
 
 <ion-content>
 
-
-  <ion-card>
-    <img src="./assets/imagens/boasvindas.png" />
-    <ion-card-header>
-      <ion-card-title>Bem Vindo</ion-card-title>
-      <ion-card-subtitle>Resumo do app</ion-card-subtitle>
-      
-    </ion-card-header>
-
-    <ion-card-content>
-      Nosso app é destinado a efetuar um agendamento de serviço (banho e tosa) com o petshop, você poderá efetuar agora mesmo um agendamento clicando no card abaixou ou 
-      deslizando a tela para direita e clicando na opção agendamento
-</ion-card-content>
-  </ion-card>
-
   <ion-card>
     <img src="./assets/imagens/tomando-banho.jpg" />
 
     <ion-card-header>
-      <ion-card-title>Verificar Petshops proximos</ion-card-title>
+      <ion-card-title>Localizar Petshops proximos</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      Clique no botão abaixo e encrontre o Petshop mais proximo de sua casa.
+      Clique no botão abaixo e encontre o Petshop mais proximo de sua casa.
     </ion-card-content>
       
-    <ion-button (click)="goPage()" routerDirection="forward" expand="block">Procurar</ion-button>
+    <ion-button (click)="goPagePedidoNovo()" routerDirection="forward" expand="block">Procurar</ion-button>
  
+  </ion-card>
+
+  
+  
+  <ion-card>
+    <img src="./assets/imagens/pedidos.jpg" />
+    <ion-card-header>
+      <ion-card-title>Verificar Pedidos</ion-card-title>
+      
+    </ion-card-header>
+
+    <ion-card-content>
+      Acesse a página de pedidos e verifique o andamento de seus serviços.
+</ion-card-content>
+
+    <ion-button [routerLink]="['/pedidos']" routerDirection="forward" expand="block">Pedidos</ion-button>
+
+  </ion-card>
+
+  <ion-card>
+    <img src="./assets/imagens/gerenciar-pets.jpeg" />
+    <ion-card-header>
+      <ion-card-title>Gerenciar Pets</ion-card-title>
+      
+    </ion-card-header>
+
+    <ion-card-content>
+      Descreva as informações do seu(s) pet(s) para fixar nesta carteirinha digital.
+</ion-card-content>
+
+    <ion-button (click)="goPageCarteirinha()" routerDirection="forward" expand="block">Gerenciar</ion-button>
+
   </ion-card>
 
 

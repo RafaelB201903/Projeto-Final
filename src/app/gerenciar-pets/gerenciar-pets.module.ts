@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CadastroClientePageRoutingModule } from './cadastro-cliente-routing.module';
+import { GerenciarPetsPageRoutingModule } from './gerenciar-pets-routing.module';
 
-import { CadastroClientePage } from './cadastro-cliente.page';
+import { GerenciarPetsPage } from './gerenciar-pets.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CadastroClientePageRoutingModule
+    GerenciarPetsPageRoutingModule
   ],
-  declarations: [CadastroClientePage]
+  declarations: [GerenciarPetsPage]
 })
-export class CadastroClientePageModule {}
+export class GerenciarPetsPageModule {}

@@ -18,9 +18,9 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
-      title: 'Agendar um pedido',
-      url: '/pedido-novo',
-      icon: 'clipboard'
+      title: 'Localizar petshops',
+      url: '/localizar-petshops',
+      icon: 'search'
     },
     {
       title: 'Pedidos',
@@ -28,14 +28,14 @@ export class AppComponent implements OnInit {
       icon: 'folder'
     },
     {
-      title: 'Carteira de Vacinação',
-      url: '/tabs',
-      icon: 'reader'
+      title: 'Gerenciar pets',
+      url: '/gerenciar-pets',
+      icon: 'paw'
     },
     {
       title: 'Dicas para Pet',
       url: '/dicas-pet',
-      icon: 'paw'
+      icon: 'reader'
     },
     {
       title: 'perfil',

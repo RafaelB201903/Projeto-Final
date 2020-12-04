@@ -25,3 +25,12 @@ ion-title {
 #start {
     color:floralwhite;
 }
+
+ion-button {
+    padding-top: 2%;
+}
+
+ion-searchbar {
+    --box-shadow: none;
+    --border-radius: 12px;
+  }

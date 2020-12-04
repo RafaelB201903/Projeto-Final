@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PedidoNovoPageRoutingModule } from './pedido-novo-routing.module';
+import { VerMaisPedidosPageRoutingModule } from './ver-mais-pedidos-routing.module';
 
-import { PedidoNovoPage } from './pedido-novo.page';
+import { VerMaisPedidosPage } from './ver-mais-pedidos.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PedidoNovoPageRoutingModule
+    VerMaisPedidosPageRoutingModule
   ],
-  declarations: [PedidoNovoPage]
+  declarations: [VerMaisPedidosPage]
 })
-export class PedidoNovoPageModule {}
+export class VerMaisPedidosPageModule {}

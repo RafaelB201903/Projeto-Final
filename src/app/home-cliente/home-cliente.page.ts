@@ -19,8 +19,12 @@ export class HomeClientePage implements OnInit {
     
   }
 
-  goPage() {
+  goPagePedidoNovo() {
     this.router.navigate(['/pedido-novo'])
+  }
+
+  goPageCarteirinha() {
+    this.router.navigate(['/pages/info-pet'])
   }
 
 

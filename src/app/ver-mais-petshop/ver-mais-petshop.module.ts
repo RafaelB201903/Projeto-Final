@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CadastroClientePageRoutingModule } from './cadastro-cliente-routing.module';
+import { VerMaisPetshopPageRoutingModule } from './ver-mais-petshop-routing.module';
 
-import { CadastroClientePage } from './cadastro-cliente.page';
+import { VerMaisPetshopPage } from './ver-mais-petshop.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CadastroClientePageRoutingModule
+    VerMaisPetshopPageRoutingModule
   ],
-  declarations: [CadastroClientePage]
+  declarations: [VerMaisPetshopPage]
 })
-export class CadastroClientePageModule {}
+export class VerMaisPetshopPageModule {}

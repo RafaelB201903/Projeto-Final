@@ -13,17 +13,9 @@ const routes: Routes = [
     loadChildren: () => import('./login-cliente/login-cliente.module').then( m => m.LoginClientePageModule)
   },
   {
-    path: 'cadastro-cliente',
-    loadChildren: () => import('./cadastro-cliente/cadastro-cliente.module').then( m => m.CadastroClientePageModule)
-  },
-  {
     path: 'home-cliente',
     loadChildren: () => import('./home-cliente/home-cliente.module').then( m => m.HomeClientePageModule),
   
-  },
-  {
-    path: 'pedido-novo',
-    loadChildren: () => import('./pedido-novo/pedido-novo.module').then( m => m.PedidoNovoPageModule)
   },
   {
     path: 'dicas-pet',
@@ -63,11 +55,35 @@ const routes: Routes = [
   },
   {
     path: 'add-info-pet',
-    loadChildren: () => import('./pages/add-info-pet/add-info-pet.module').then( m => m.AddInfoPetPageModule)
+    loadChildren: () => import('./add-info-pet/add-info-pet.module').then( m => m.AddInfoPetPageModule)
   },
   {
     path: 'info-vacinas',
     loadChildren: () => import('./pages/info-vacinas/info-vacinas.module').then( m => m.InfoVacinasPageModule)
+  },
+  {
+    path: 'cadastro-cliente',
+    loadChildren: () => import('./cadastro-cliente/cadastro-cliente.module').then( m => m.CadastroClientePageModule)
+  },
+  {
+    path: 'gerenciar-pets',
+    loadChildren: () => import('./gerenciar-pets/gerenciar-pets.module').then( m => m.GerenciarPetsPageModule)
+  },
+  {
+    path: 'localizar-petshops',
+    loadChildren: () => import('./localizar-petshops/localizar-petshops.module').then( m => m.LocalizarPetshopsPageModule)
+  },
+  {
+    path: 'agendar-pedido',
+    loadChildren: () => import('./agendar-pedido/agendar-pedido.module').then( m => m.AgendarPedidoPageModule)
+  },
+  {
+    path: 'ver-mais-petshop',
+    loadChildren: () => import('./ver-mais-petshop/ver-mais-petshop.module').then( m => m.VerMaisPetshopPageModule)
+  },
+  {
+    path: 'ver-mais-pedidos',
+    loadChildren: () => import('./ver-mais-pedidos/ver-mais-pedidos.module').then( m => m.VerMaisPedidosPageModule)
   },
 ];
 

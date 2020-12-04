@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agendamento de serviço</ion-title>
+
+    <ion-buttons slot="start" style="color:floralwhite">
+      <ion-button [routerLink]="['/localizar-petshops']" >
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons > 
+
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+    
+      <ion-card-subtitle>Informe as informações
+        necessarias para poder efetuar o serviço.
+      </ion-card-subtitle>
+  
+  </ion-card-header>
+  
+
+</ion-card>
+
+  <form>
+ 
+
+    
+
+    <ion-item>
+      <ion-label>Serviço</ion-label>
+      <ion-select >
+        <ion-select-option>Banho</ion-select-option>
+        <ion-select-option >Tosa</ion-select-option>
+        <ion-select-option >Banho e Tosa</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+          <ion-label>Pet</ion-label>
+          <ion-select value="dog">
+            <ion-select-option >Belinha</ion-select-option>
+            <ion-select-option >JuJu</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+    <br>
+
+    <ion-button  expand="block">Agendar</ion-button>
+   
+  </form>
+
+</ion-content>
