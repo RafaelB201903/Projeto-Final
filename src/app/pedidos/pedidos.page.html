@@ -13,41 +13,56 @@
 <ion-content>
 
   <ion-card [routerLink]="['/ver-mais-pedidos']">
-    <ion-card-header>
+    <ion-card-header color="primary">
       <ion-card-title>Belinha</ion-card-title>
     </ion-card-header>
 
-   
+    <ion-row class="no-padding mg-top-20">
+      
+      <ion-col size="4">
+          <img class="img" src="assets/icon/dog.png">
+      </ion-col>
+  
+      <ion-col col-3>
+        <ul style="list-style: none;">
+          <li><strong>Dono:</strong> Toddy</li>
+          <li><strong>Serviço(s):</strong> Banho</li>
+          <li><strong>Especie:</strong> Cachorro</li>
+          <li id="status"><strong>STATUS:</strong> <strong id="andamento"> EM ANDAMENTO</strong></li>
+        </ul>
+      </ion-col>
 
-  <div class="container">
-    <img class="flutuante" src="assets/icon/dog.png">
-    <p><strong>Pet:</strong> Belinha</p>
-    <p><strong>Serviço(s):</strong> Tosa</p>
-    <p><strong>Especie:</strong> Cachorro</p>
-    <p><strong>STATUS:</strong> <strong id="andamento"> EM ANDAMENTO</strong></p>
-    
-    
-</div>
+    </ion-row>
 
   </ion-card>
 
-  <ion-card >
-    <ion-card-header>
+  <ion-card>
+
+    <ion-card-header color="primary">
       <ion-card-title>Belinha</ion-card-title>
     </ion-card-header>
 
-   
+    <ion-row class="no-padding mg-top-20">
+      <ion-col size="4">
+       
+       
+          <img class="img" src="assets/icon/dog.png">
+       
+      </ion-col>
+  
+      <ion-col col-3>
+        
 
-  <div class="container">
-    <img class="flutuante" src="assets/icon/dog.png">
-    <p><strong>Pet:</strong> Toddy</p>
-    <p><strong>Serviço(s):</strong> Banho</p>
-    <p><strong>Especie:</strong> Cachorro</p>
-    <p><strong>STATUS:</strong> <strong id="finalizado"> EM ANDAMENTO</strong></p>
-    
-    
-</div>
 
+       <ul style="list-style: none;">
+        <li><strong>Dono:</strong> Toddy</li>
+        <li><strong>Serviço(s):</strong> Banho</li>
+        <li><strong>Especie:</strong> Cachorro</li>
+        <li id="status"><strong>STATUS:</strong> <strong id="finalizado"> EM ANDAMENTO</strong></li>
+      </ul>
+        
+      </ion-col>
+    </ion-row>
   </ion-card>
 
 

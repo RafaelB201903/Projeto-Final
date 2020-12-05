@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header class="ion-no-border" >
+  <ion-toolbar no-shadow no-border>
     <ion-title >Perfil</ion-title>
     <ion-buttons slot="start" style="color:floralwhite">
       <ion-button [routerLink]="['/home-cliente']" >
@@ -13,6 +13,26 @@
 <ion-content>
 
 
+  <div class="area-perfil">
+    
+  <ion-row>
+    <ion-col col-3>
+      <p>Pets</p>
+      <p>2</p>
+    </ion-col>
+    <ion-col id="header" col-3>
+      <img src="assets/icon/pessoa1.jpg" />
+    </ion-col>
+    <ion-col col-3>
+       <p>Pedidos</p>
+       <p>1</p>
+    </ion-col>
+  </ion-row>
+
+    <ion-row id="header">
+      <h1>Fernando</h1>
+    </ion-row>
+  </div>
 
   
   <ion-card-header>
@@ -20,7 +40,7 @@
     
   </ion-card-header>
 
-  <ion-card-content>
+ 
    
     <form id="#form">
 
@@ -102,7 +122,7 @@
       </ion-button>
      </form>
 
-</ion-card-content>
+
 
 
 

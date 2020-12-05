@@ -45,14 +45,23 @@ ion-title {
     }
 
 } 
-.flutuante{
-    margin: 0 5% 5% 5%;
-    float: left;
-    width: 100px;
-    height: 100px;
-    
+
+li {
+  margin-top: 5px;
+
+  
 }
 
-ion-card-title{
+#status {
+  padding-top: 10px;
+}
+
+.img {
+  margin: 5%;
+  width: 100%;
+  height: 100%;
+}
+
+ion-card-title {
   text-align: center;
 }

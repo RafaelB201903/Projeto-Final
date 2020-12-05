@@ -15,22 +15,32 @@
   <h1>Lista de pets</h1>
 
   <ion-card [routerLink]="['/tabs/info-pet']">
-    <ion-card-header>
+
+    <ion-card-header color="primary">
       <ion-card-title>Belinha</ion-card-title>
     </ion-card-header>
 
-   
+    <ion-row class="no-padding mg-top-20">
+      <ion-col size="4">
+       
+       
+          <img class="img" src="assets/icon/dog.png">
+       
+      </ion-col>
+  
+      <ion-col col-3>
+        
 
-  <div class="container">
-    <img class="flutuante" src="assets/icon/dog.png">
-    <p><strong>Dono:</strong> Rosana de Souza</p>
-    <p><strong>Endereço:</strong> Rua das flores 85</p>
-    <p><strong>Telefone:</strong> 21 98593-2493</p>
-    <p><strong>Dono:</strong> Rosana de Souza</p>
-    
-    
-</div>
 
+       <ul style="list-style: none;">
+        <li><strong>Dono:</strong> Rosana de Souza</li>
+        <li><strong>Endereço:</strong> Rua das flores 85</li>
+        <li><strong>Telefone:</strong> 21 98593-2493</li>     
+        <li><strong>Especie:</strong> Cachorro </li>     
+      </ul>
+        
+      </ion-col>
+    </ion-row>
   </ion-card>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
