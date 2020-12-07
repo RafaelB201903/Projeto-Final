@@ -12,7 +12,7 @@
 <ion-content>
 
   <ion-card>
-    <img src="./assets/imagens/tomando-banho2.jpg" />
+    <img src="./assets/imagens/petshop_prox.png" />
 
     <ion-card-header>
       <ion-card-title>Localizar Petshops proximos</ion-card-title>
@@ -22,14 +22,14 @@
       Clique no botão abaixo e encontre o Petshop mais proximo de sua casa.
     </ion-card-content>
       
-    <ion-button (click)="goPagePedidoNovo()" routerDirection="forward" expand="block">Procurar</ion-button>
+    <ion-button [routerLink]="['/localizar-petshops']" routerDirection="forward" expand="block">Procurar</ion-button>
  
   </ion-card>
 
   
   
   <ion-card>
-    <img src="./assets/imagens/pedidos2.jpg" />
+    <img src="./assets/imagens/pedido.png" />
     <ion-card-header>
       <ion-card-title>Verificar Pedidos</ion-card-title>
       
@@ -44,7 +44,7 @@
   </ion-card>
 
   <ion-card>
-    <img src="./assets/imagens/gerenciamento2.jpg" />
+    <img src="./assets/imagens/gerenciamento.jpg" />
     <ion-card-header>
       <ion-card-title>Gerenciar Pets</ion-card-title>
       
@@ -54,7 +54,7 @@
       Descreva as informações do seu(s) pet(s) para fixar nesta carteirinha digital.
 </ion-card-content>
 
-    <ion-button (click)="goPageCarteirinha()" routerDirection="forward" expand="block">Gerenciar</ion-button>
+    <ion-button [routerLink]="['/gerenciar-pets']"  expand="block">Gerenciar</ion-button>
 
   </ion-card>
 

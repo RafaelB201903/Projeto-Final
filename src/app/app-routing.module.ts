@@ -85,6 +85,18 @@ const routes: Routes = [
     path: 'cadastro-cliente',
     loadChildren: () => import('./cadastro-cliente/cadastro-cliente.module').then( m => m.CadastroClientePageModule)
   },
+  {
+    path: 'add-imagem',
+    loadChildren: () => import('./add-imagem/add-imagem.module').then( m => m.AddImagemPageModule)
+  },
+  {
+    path: 'alt-senha',
+    loadChildren: () => import('./alt-senha/alt-senha.module').then( m => m.AltSenhaPageModule)
+  },
+  {
+    path: 'atualizar-info',
+    loadChildren: () => import('./atualizar-info/atualizar-info.module').then( m => m.AtualizarInfoPageModule)
+  },
 ];
 
 @NgModule({

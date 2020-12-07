@@ -73,4 +73,35 @@ color:floralwhite;
     font-size: 20px;
       
   }
+
   
+
+  .quadrado {
+    background: #66DE86;
+    height: 100px;
+    padding:  4px 10px 50px 10px;
+    border-radius:  28px 28px 28px 28px;
+    display: block;
+    box-shadow: 1px 5px 5px 0px rgba(0, 0, 0, 0.3);
+          --box-shadow: none;
+  }
+  
+  ion-icon {
+    padding-top:10px
+  }
+  
+  
+  ion-button {
+    height: 100px;
+    border-radius:  28px;
+    
+  }
+  
+  
+  .quadrado:hover {background-color: #53b36c}
+  
+  .quadrado:active {
+    background-color: #53b36c;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
