@@ -62,10 +62,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/info-vacinas/info-vacinas.module').then( m => m.InfoVacinasPageModule)
   },
   {
-    path: 'cadastro-cliente',
-    loadChildren: () => import('./cadastro-cliente/cadastro-cliente.module').then( m => m.CadastroClientePageModule)
-  },
-  {
     path: 'gerenciar-pets',
     loadChildren: () => import('./gerenciar-pets/gerenciar-pets.module').then( m => m.GerenciarPetsPageModule)
   },
@@ -84,6 +80,10 @@ const routes: Routes = [
   {
     path: 'ver-mais-pedidos',
     loadChildren: () => import('./ver-mais-pedidos/ver-mais-pedidos.module').then( m => m.VerMaisPedidosPageModule)
+  },
+  {
+    path: 'cadastro-cliente',
+    loadChildren: () => import('./cadastro-cliente/cadastro-cliente.module').then( m => m.CadastroClientePageModule)
   },
 ];
 
