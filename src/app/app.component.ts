@@ -13,11 +13,6 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Inicio',
-      url: '/home-cliente',
-      icon: 'home'
-    },
-    {
       title: 'Localizar petshops',
       url: '/localizar-petshops',
       icon: 'search'
@@ -43,7 +38,7 @@ export class AppComponent implements OnInit {
       icon: 'person'
     },
     {
-      title: 'Deslogar',
+      title: 'sair',
       url: '/sair-cliente',
       icon: 'exit'
     }

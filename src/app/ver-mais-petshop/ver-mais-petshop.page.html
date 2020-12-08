@@ -22,13 +22,65 @@
 
   <img src="assets/icon/lightpet-icon.png" alt="">
 
-  <p><strong>Nome do Petshop: </strong>Estrela Petshop </p>
   <p><strong>E-mail: </strong> estrelapet@gmail.com</p>
   <p><strong>Telefone:</strong> 21 91234-2134 </p>
   <p><strong>CNPJ:</strong> 00.000.000/0000 </p>
   <p><strong>Endereço:</strong> Rua Coronel Silva </p>
   
+  
+    
+   
+
+  
+
 
   </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Tabela de preços</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-grid>
+
+        <ion-row>
+          <ion-col col-6>
+            <div>Banho:</div>
+          </ion-col>
+          <ion-col col-6>
+            <div>---</div>
+          </ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col col-6>
+            <div>Tosa:</div>
+          </ion-col>
+          <ion-col col-6>
+            <div>---</div>
+          </ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col col-6>
+            <div>Banho e Tosa:</div>
+          </ion-col>
+          <ion-col col-6>
+            <div>---</div>
+          </ion-col>
+        </ion-row>
+    
+      
+    
+      </ion-grid>
+    
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button shape="round" expand="full" [routerLink]="['/agendar-pedido']" >Agendar</ion-button>
+
 
 </ion-content>

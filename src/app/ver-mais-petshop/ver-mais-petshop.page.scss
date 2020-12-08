@@ -26,8 +26,16 @@ img {
     margin: auto;
     display: flex;
     align-items: center;
+    height: 120px;
+    width: 120px;
 }
 
 p {
     padding-left: 5%;
 }
+
+ion-col > div {
+    background-color: #f7f7f7;
+    border: solid 1px #ddd;
+    padding: 10px;
+  }

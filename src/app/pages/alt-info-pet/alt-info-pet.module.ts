@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomeClientePageRoutingModule } from './home-cliente-routing.module';
+import { AltInfoPetPageRoutingModule } from './alt-info-pet-routing.module';
 
-import { HomeClientePage } from './home-cliente.page';
+import { AltInfoPetPage } from './alt-info-pet.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomeClientePageRoutingModule
+    AltInfoPetPageRoutingModule
   ],
-  declarations: [HomeClientePage]
+  declarations: [AltInfoPetPage]
 })
-export class HomeClientePageModule {}
+export class AltInfoPetPageModule {}

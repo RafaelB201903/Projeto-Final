@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { HomeClientePage } from './home-cliente.page';
+import { AltInfoPetPage } from './alt-info-pet.page';
 
-describe('HomeClientePage', () => {
-  let component: HomeClientePage;
-  let fixture: ComponentFixture<HomeClientePage>;
+describe('AltInfoPetPage', () => {
+  let component: AltInfoPetPage;
+  let fixture: ComponentFixture<AltInfoPetPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeClientePage ],
+      declarations: [ AltInfoPetPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HomeClientePage);
+    fixture = TestBed.createComponent(AltInfoPetPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

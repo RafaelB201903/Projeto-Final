@@ -13,11 +13,6 @@ const routes: Routes = [
     loadChildren: () => import('./login-cliente/login-cliente.module').then( m => m.LoginClientePageModule)
   },
   {
-    path: 'home-cliente',
-    loadChildren: () => import('./home-cliente/home-cliente.module').then( m => m.HomeClientePageModule),
-  
-  },
-  {
     path: 'dicas-pet',
     loadChildren: () => import('./dicas-pet/dicas-pet.module').then( m => m.DicasPetPageModule)
   },
@@ -96,6 +91,10 @@ const routes: Routes = [
   {
     path: 'atualizar-info',
     loadChildren: () => import('./atualizar-info/atualizar-info.module').then( m => m.AtualizarInfoPageModule)
+  },
+  {
+    path: 'alt-info-pet',
+    loadChildren: () => import('./pages/alt-info-pet/alt-info-pet.module').then( m => m.AltInfoPetPageModule)
   },
 ];
 

@@ -35,7 +35,7 @@ export class LoginClientePage implements OnInit {
       this.auth.signInWithEmailAndPassword(user,pass).then(data=>{
         load.dismiss();
         this.menuCtrl.enable(true);
-        this.navCtrl.navigateRoot(['/home-cliente']);
+        this.navCtrl.navigateRoot(['/localizar-petshops']);
       }).catch(data=>{
         load.dismiss();
         this.template.myAlert("Erro ao autenticar");
