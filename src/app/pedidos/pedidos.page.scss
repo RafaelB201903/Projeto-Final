@@ -11,9 +11,14 @@ ion-card-title {
 }
 
 img {
-    margin-left: auto;
-    margin-right: auto;
-    display:block;
+    display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20%;
+  margin-bottom: 20%;
+
+  width: 100px;
+  height: 100px;
 }
 
 ion-toolbar{
@@ -42,9 +47,11 @@ ion-toolbar{
 
 li {
     margin-top: 5px;
-
-    
-}
+  }
+  
+  ul {
+    padding-inline-start: 10px;
+  }
 
 #status {
     padding-top: 10px;

@@ -96,6 +96,10 @@ const routes: Routes = [
     path: 'alt-info-pet',
     loadChildren: () => import('./pages/alt-info-pet/alt-info-pet.module').then( m => m.AltInfoPetPageModule)
   },
+  {
+    path: 'alt-info-vacinas',
+    loadChildren: () => import('./pages/alt-info-vacinas/alt-info-vacinas.module').then( m => m.AltInfoVacinasPageModule)
+  },
 ];
 
 @NgModule({
