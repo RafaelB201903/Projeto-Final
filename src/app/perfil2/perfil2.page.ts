@@ -5,11 +5,11 @@ import { ClienteService } from '../services/cliente.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
-  selector: 'app-atualizar-info',
-  templateUrl: './atualizar-info.page.html',
-  styleUrls: ['./atualizar-info.page.scss'],
+  selector: 'app-perfil2',
+  templateUrl: './perfil2.page.html',
+  styleUrls: ['./perfil2.page.scss'],
 })
-export class AtualizarInfoPage implements OnInit {
+export class Perfil2Page implements OnInit {
 
   formGroup: FormGroup;
   perfil : Cliente = new Cliente(); // Declarar a classe onde se encontra dados do perfil
@@ -41,12 +41,9 @@ export class AtualizarInfoPage implements OnInit {
     this.formGroup = this.formBuilder.group({
       nome: [this.perfil.nome],
       cpf: [this.perfil.cpf],
-      telefone: [this.perfil.telefone],
-      email: [this.perfil.email],
-      cidade: [this.perfil.cidade],
-      bairro: [this.perfil.bairro],
       endereco: [this.perfil.endereco],
-      ncasa: [this.perfil.ncasa]
+      email: [this.perfil.email],
+      telefone: [this.perfil.telefone]
     })
   }
 
@@ -57,7 +54,7 @@ export class AtualizarInfoPage implements OnInit {
       // this.formGroup.value -> Dados preenchidos nos campos
       this.clienteServ.atualizaPerfil(response.uid,this.formGroup.value).subscribe(response=>{
         console.log(response);
-        console.log(this.formGroup.value)
+        console.log(this.formGroup.value  )
       })
     })
   }

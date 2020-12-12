@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AtualizarInfoPageRoutingModule } from './atualizar-info-routing.module';
+import { Perfil2PageRoutingModule } from './perfil2-routing.module';
 
-import { AtualizarInfoPage } from './atualizar-info.page';
+import { Perfil2Page } from './perfil2.page';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { AtualizarInfoPage } from './atualizar-info.page';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    AtualizarInfoPageRoutingModule
+    Perfil2PageRoutingModule
   ],
-  declarations: [AtualizarInfoPage]
+  declarations: [Perfil2Page]
 })
-export class AtualizarInfoPageModule {}
+export class Perfil2PageModule {}

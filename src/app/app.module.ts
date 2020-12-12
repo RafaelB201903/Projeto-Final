@@ -1,3 +1,4 @@
+import { ClienteService } from './services/cliente.service';
 import { PetService } from './services/pet.service';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { NgModule } from '@angular/core';
@@ -33,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     PetService,
+    ClienteService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

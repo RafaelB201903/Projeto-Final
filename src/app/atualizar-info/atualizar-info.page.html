@@ -19,7 +19,7 @@
    
      </ion-card>
 
-  <form id="form">
+  <form [formGroup]="formGroup">
     <h2>Informações Pessoais</h2>
      
     <ion-grid class="no-padding mg-top-30 form-bg-light">
@@ -134,7 +134,7 @@
   
     </ion-grid>
   
-        <ion-button id="button-atualizar" expand="block" shape="round">
+        <ion-button (click)="atualizar()" id="button-atualizar" expand="block" shape="round">
           Atualizar
         </ion-button>
         
