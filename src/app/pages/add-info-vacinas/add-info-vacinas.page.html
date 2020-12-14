@@ -15,6 +15,8 @@
 
 <ion-content>
 
+  <form [formGroup]="formGroup">
+
   <h1>Informações sobre a vacina</h1>
 
   <ion-grid>
@@ -31,7 +33,7 @@
       <ion-row>
         
         <ion-col>
-          <div id="info"><ion-input type="text" placeholder="anti-rábica" ></ion-input> </div>
+          <div id="info"><ion-input formControlName="medicamento" type="text" placeholder="anti-rábica" ></ion-input> </div>
         </ion-col>
         
         
@@ -49,7 +51,7 @@
 
           
           <ion-col >
-            <div id="info"><ion-input type="date" ></ion-input> </div>
+            <div id="info"><ion-input formControlName="data" type="date" ></ion-input> </div>
           </ion-col>
           
         </ion-row>
@@ -66,18 +68,18 @@
 
           
           <ion-col >
-            <div id="info"><ion-input type="date" ></ion-input> </div>
+            <div id="info"><ion-input formControlName="proximadose" type="date" ></ion-input> </div>
           </ion-col>
           
         </ion-row>
 
-        <ion-button expand="full" color="success">salvar</ion-button>
+        <ion-button (click)="cadastrar()" expand="full" color="success">salvar</ion-button>
         
 
     
   </ion-grid>
 
   
-
+</form>
 
 </ion-content>

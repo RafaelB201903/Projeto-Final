@@ -20,7 +20,10 @@ export class AtualizarInfoPage implements OnInit {
     
       this.iniciarForm(); // obrigatório inicializar o formulário
     
-      this.auth.currentUser.then(response=>{ // auth.currentUser -> Obten dados do usuario
+      this.auth.currentUser.then(response=>{ // auth.currentUser -> Obten dados do usuario  
+        
+        console.log(response)
+
 
         this.clienteServ.buscaPerfilPorId(response.uid).subscribe(response=>{
           // se houver o perfil, colocar os dados para a variavel perfil
@@ -42,7 +45,8 @@ export class AtualizarInfoPage implements OnInit {
       nome: [this.perfil.nome],
       cpf: [this.perfil.cpf],
       telefone: [this.perfil.telefone],
-      email: [this.perfil.email],
+      complemento: [this.perfil.complemento],
+      cep: [this.perfil.cep],
       cidade: [this.perfil.cidade],
       bairro: [this.perfil.bairro],
       endereco: [this.perfil.endereco],

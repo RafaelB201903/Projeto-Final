@@ -12,9 +12,11 @@
 
 <ion-content>
 
-  <h1>Lista de pets</h1>
+ 
 
-  <ion-card [routerLink]="['/tabs/info-pet']">
+  <ion-list>
+
+  <ion-card (click)="visualizar()" [routerLink]="['/tabs/info-pet']" *ngFor="let pet of lista">
 
     
 
@@ -26,15 +28,17 @@
       
       <ion-col col-3>
        <ul style="list-style: none;">
-        <h3>Belinha</h3>
-        <li><ion-icon name="location"></ion-icon> Rua das flores 85</li>
-        <li><ion-icon name="call"></ion-icon> 21 98593-2493</li>     
-        <li><ion-icon name="paw"></ion-icon> Cachorro </li>     
+        <h3>{{pet.nomedopet}}</h3>
+        <li><ion-icon name="location"></ion-icon>{{pet.endereco}}</li>
+        <li><ion-icon name="call"></ion-icon>{{pet.telefone}}</li>     
+        <li><ion-icon name="paw"></ion-icon>{{pet.especie}} </li>     
       </ul>
         
       </ion-col>
     </ion-row>
   </ion-card>
+
+</ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button [routerLink]="['/add-info-pet']">

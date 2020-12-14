@@ -1,3 +1,4 @@
+import { VacinaService } from './services/vacina.service';
 import { ClienteService } from './services/cliente.service';
 import { PetService } from './services/pet.service';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -34,6 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     PetService,
+    VacinaService,
     ClienteService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

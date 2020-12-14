@@ -10,24 +10,36 @@ export class PetService {
 
     constructor(private firestore: AngularFirestore) {}
 
+
+    listaDePets(): Observable<any> {
+
+        // Observable -> Aguardar resposta do servidor
+        return from(new Observable(observe => { // converter para Observable
+
+            // this.firestore.collection('cliente') -> Selecionar a coleção no Firestore
+            // .snapshotChanges().subscribe -> Tentar buscar no servidor
+            // response -> dados baixados do servidor, os clientes
+            this.firestore.collection('pet').snapshotChanges().subscribe(response => {
+                // transformar response em array de clientes
+                let lista: Pet[] = [];
+                response.map(obj => {
+                    // será repetido para cada registro, cada registro do Firestore se chama obj
+                    let pet: Pet = new Pet();
+                    pet.setData(obj.payload.doc.data());// obj.payload.doc.data() -> Dados do cliente
+                    pet.id = obj.payload.doc.id; // inserindo ID
+                    lista.push(pet); // adicionando o cliente na lista // push é adicionar
+                });
+                observe.next(lista);
+            })
+
+        }))
+    }
+
     cadastrar(pet: any): Observable<any> {//função de espera para o servidor
         return from(new Observable(observe => {
-            //cliente foi enviado no parametro e foi adicionado aqui em baixo
-
-            //coleção cliente  //.add = vai cadastrar o cliente
-            //mas para eu colocar o obj cliente aqui 
-            //toda vez que eu usar a funçao esse clinete tem que ser
-            //passado no parametro (lá em cima), ou seja o cliente que foi enviado
-            //no parametro ele vai ser passado aqui dentr da funçao
-            //e agora vou tentar adicionar (then)
-
-            //add cria um novo documento
+       
             this.firestore.collection('pet').add(pet).then(response => {
-                //vai acessar a coleção cliente e vai tentar addd um cliente
-                //resposta do servidor response
-
-                //se for cadastrado com sucesso eu quero que a minha função do
-                //observable me retorne cadastrado com sucesso
+             
                 observe.next("Cadastrado com sucesso!");
 
             }, (err) => {
@@ -38,5 +50,65 @@ export class PetService {
     }
 
 
-}
+     
+     buscaPorId(id: any): Observable<any> {
+        return from(new Observable(observe => {
+      
+            this.firestore.collection('pet').doc(id).snapshotChanges().subscribe(response => {
+              
 
+                console.log(response);
+
+                let pet: Pet = new Pet();
+                pet.id = response.payload.id;
+              
+
+                pet.setData(response.payload.data());
+                observe.next(pet);
+
+               
+            }, (err) => {
+
+                observe.error("Erro ao buscar o ID!");
+            })
+
+
+
+        }));
+
+    }
+
+    atualizar(pet: any): Observable<any> {
+        return from(new Observable(observe => {
+           
+
+     
+            this.firestore.collection('pet').doc(pet.id).set(pet).then(response => {
+            
+                observe.next("Atualizado com sucesso!");
+
+            }, (err) => {
+
+                observe.error("Erro ao atualizar!")
+            })
+        }));
+    }
+
+
+    excluir(pet : any) : Observable<any>{
+
+        return from(new Observable(observe => {
+           
+
+     
+            this.firestore.collection('pet').doc(pet.id).delete().then(response => {
+            
+                observe.next("Excluido com sucesso!");
+
+            }, (err) => {
+
+                observe.error("Erro ao excluir!")
+            })
+        }));
+    }
+}

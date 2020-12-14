@@ -48,16 +48,16 @@ export class AddInfoPetPage implements OnInit {
 
   cadastrar() {
     //template de carregamento
-    this.template.loading.then(load=>{
+    
 
-      load.present();//abre janela no inicio do carregamento
+      //abre janela no inicio do carregamento
 
       //quando eu chamo o formGroup.value eles chamam todos esses dados lá de cima
       this.petServ.cadastrar(this.formGroup.value).subscribe(response => {
         
         console.log("Cadastrado com sucesso");
 
-        load.dismiss();//janelinha de carregamento
+        ;//janelinha de carregamento
         this.template.myAlert(response);//response lá do service
         //
 
@@ -65,11 +65,11 @@ export class AddInfoPetPage implements OnInit {
       },erro => {
         console.log("Erro")
 
-        load.dismiss();
+      
         this.template.myAlert("Erro ao Cadastrar");
       })
 
-    })
+    
   }
 
 }

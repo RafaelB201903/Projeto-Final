@@ -22,45 +22,35 @@
   <form [formGroup]="formGroup">
     <h2>Informações Pessoais</h2>
      
-    <ion-grid class="no-padding mg-top-30 form-bg-light">
-      <ion-row class="no-padding">
+    <ion-grid >
+      <ion-row >
         <ion-col col-12>
           
-          <ion-item class="transparent-bg no-padding">
+          <ion-item >
             <ion-label position="floating" >Nome completo</ion-label>
-            <ion-input  ></ion-input>
+            <ion-input type="text" formControlName="nome"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
   
-      <ion-row class="no-padding mg-top-20">
+      <ion-row >
         <ion-col col-12>
          
-          <ion-item class="transparent-bg no-padding">
+          <ion-item>
             <ion-label position="floating" >CPF</ion-label>
-            <ion-input  type="text"></ion-input>
+            <ion-input  type="text" formControlName="cpf"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
 
       <h2>Informações de Contato</h2>
 
-      <ion-row class="no-padding mg-top-20">
+      <ion-row >
         <ion-col col-12>
          
-          <ion-item class="transparent-bg no-padding">
+          <ion-item >
             <ion-label position="floating" >Telefone</ion-label>
-            <ion-input type="number" ></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row class="no-padding mg-top-20">
-        <ion-col col-12>
-          
-          <ion-item class="transparent-bg no-padding">
-            <ion-label position="floating" >E-mail</ion-label>
-            <ion-input type="email" ></ion-input>
+            <ion-input type="number" formControlName="telefone"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -69,65 +59,65 @@
 
       
 
-      <ion-row class="no-padding mg-top-20">
+      <ion-row >
         <ion-col col-12>
          
           
-          <ion-item class="transparent-bg no-padding">
+          <ion-item >
             <ion-label position="floating" >Cidade</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" formControlName="cidade"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
 
-      <ion-row class="no-padding mg-top-20">
+      <ion-row >
         <ion-col col-12>
          
-          <ion-item class="transparent-bg no-padding">
+          <ion-item >
             <ion-label position="floating" >Bairro</ion-label>
-            <ion-input  type="text"></ion-input>
+            <ion-input  type="text" formControlName="bairro"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
   
-      <ion-row class="no-padding mg-top-20">
+      <ion-row >
         <ion-col col-12>
           
-          <ion-item class="transparent-bg no-padding">
+          <ion-item >
             <ion-label position="floating" >Endereço</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" formControlName="endereco"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
 
-      <ion-row class="no-padding mg-top-20">
+      <ion-row >
         <ion-col col-12>
           
-          <ion-item class="transparent-bg no-padding">
+          <ion-item >
             <ion-label position="floating" >N° da casa</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" formControlName="ncasa"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
 
-      <ion-row class="no-padding mg-top-20">
+      <ion-row >
         <ion-col col-12>
           
-          <ion-item class="transparent-bg no-padding">
+          <ion-item >
             <ion-label position="floating" >Complemento</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" formControlName="complemento"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
 
       
   
-      <ion-row class="no-padding mg-top-20">
+      <ion-row >
         <ion-col col-12>
          
-          <ion-item class="transparent-bg no-padding">
+          <ion-item >
             <ion-label position="floating" >CEP</ion-label>
-            <ion-input type="number" ></ion-input>
+            <ion-input type="number" formControlName="cep"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>

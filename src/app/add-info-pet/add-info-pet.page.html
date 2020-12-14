@@ -19,10 +19,11 @@
 
   <form [formGroup]="formGroup">
 
-  <ion-item>
-    <ion-label position="floating">Nome do Pet:</ion-label>
-    <ion-input type="text" formControlName="nomedopet"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" formControlName="nomedopet"></ion-input>
+     <!-- formControlName="nome" = vinculei com o ts-->
+    </ion-item>
 
   <ion-item>
     <ion-label position="floating">Raça:</ion-label>
@@ -31,7 +32,7 @@
 
   <ion-item>
     <ion-label>Especie:</ion-label>
-    <ion-select >
+    <ion-select formControlName="especie">
       <ion-select-option value="Cao">Cão</ion-select-option>
       <ion-select-option value="Gato">Gato</ion-select-option>
     </ion-select>
@@ -44,7 +45,7 @@
 
   <ion-item>
     <ion-label>Sexo:</ion-label>
-    <ion-select >
+    <ion-select formControlName="sexo">
       <ion-select-option value="cat">Macho</ion-select-option>
       <ion-select-option value="dog">Fêmea</ion-select-option>
     </ion-select>
@@ -82,13 +83,17 @@
 
   <ion-item>
     <ion-label position="floating">Celular:</ion-label>
-    <ion-input type="text" formControlName="nomedopet"></ion-input>
+    <ion-input type="text" formControlName="celular"></ion-input>
   </ion-item>
 
 
-</form>
+
 
   <ion-button (click)="cadastrar()" shape="round" expand="full" color="success">Salvar</ion-button>
+</form>
+
 </ion-card>
+
+
 
 </ion-content>
