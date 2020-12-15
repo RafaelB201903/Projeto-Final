@@ -37,7 +37,7 @@ export class GerenciarPetsPage implements OnInit {
     })
   }
 
-  
+  //metodo para poder enviar o id do cliente pela url
   visualizar(pet){
     //navigateFordward => para navegar pra frente, e n retornar
     //quero abrir essa pagina e quero enviar o cliente.id

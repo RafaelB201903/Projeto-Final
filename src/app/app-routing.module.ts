@@ -37,11 +37,11 @@ const routes: Routes = [
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
   {
-    path: 'tabs',
+    path: 'tabs/:id',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
   },
   {
-    path: 'info-pet',
+    path: 'info-pet/:id',
     loadChildren: () => import('./pages/info-pet/info-pet.module').then( m => m.InfoPetPageModule)
   },
   {

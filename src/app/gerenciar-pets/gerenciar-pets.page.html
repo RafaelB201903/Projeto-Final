@@ -16,7 +16,7 @@
 
   <ion-list>
 
-  <ion-card (click)="visualizar()" [routerLink]="['/tabs/info-pet']" *ngFor="let pet of lista">
+  <ion-card (click)="visualizar(pet)"  *ngFor="let pet of lista">
 
     
 

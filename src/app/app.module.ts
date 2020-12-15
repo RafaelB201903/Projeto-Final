@@ -1,4 +1,3 @@
-import { PetShopService } from './services/petshop.services';
 import { VacinaService } from './services/vacina.service';
 import { ClienteService } from './services/cliente.service';
 import { AngularFireStorageModule } from '@angular/fire/storage';
