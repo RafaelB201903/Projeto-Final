@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Petshop } from '../model/petshop';
 import { NavController } from '@ionic/angular';
 import { PetshopService } from '../services/petshop.service';
@@ -10,8 +10,11 @@ import { PetshopService } from '../services/petshop.service';
 })
 export class LocalizarPetshopsPage implements OnInit {
 
+@ViewChild("nome") nome; 
+
 
   lista : Petshop[] = [];
+  clienteServ: any;
   constructor(private petshopService : PetshopService,
     private navCtrl : NavController) { }
 
@@ -32,6 +35,14 @@ export class LocalizarPetshopsPage implements OnInit {
       //o lista de cliente retorna observable 
     })
     
+  }
+
+  pesquisar(){
+    console.log("Busca por: "+this.nome.value)
+    this.petshopService.buscaPorNome(this.nome.value).subscribe(response=>{
+      this.lista = [];
+      this.lista = response;
+    });
   }
   
 

@@ -7,7 +7,8 @@
     
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar  animated placeholder="Pesquise aqui um Petshop"></ion-searchbar>
+    <ion-searchbar #nome></ion-searchbar>
+    <ion-button (click)="pesquisar()">Pesquisar</ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -57,7 +58,7 @@
     </ion-card>
 
 
-
+  
     
 
 </ion-content>
