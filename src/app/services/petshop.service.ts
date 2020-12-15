@@ -2,6 +2,7 @@ import { Petshop } from '../model/petshop';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable, from } from 'rxjs';
+import { Pet } from '../model/pet';
 
 @Injectable()
 
@@ -32,6 +33,26 @@ export class PetshopService {
                 });
                 observe.next(lista);
             })
+
+        }))
+    }
+
+    buscaPorNome(nome: string): Observable<any> {
+
+        // Observable -> Aguardar resposta do servidor
+        return from(new Observable(observe => { // converter para Observable
+            this.firestore.collection('perfil-petshop').ref.orderBy("nome")
+                .startAt(nome).endAt(nome + "\uf8ff").get().then(response => {
+                    let lista: Petshop[] = [];
+                    response.docs.map(obj => {
+                        // será repetido para cada registro, cada registro do Firestore se chama obj
+                        let petshop: Petshop = new Petshop();
+                        petshop.setData(obj.data());// obj.payload.doc.data() -> Dados do cliente
+                        petshop.id = obj.id; // inserindo ID
+                        lista.push(petshop); // adicionando o cliente na lista // push é adicionar
+                    });
+                    observe.next(lista);
+                })
 
         }))
     }
