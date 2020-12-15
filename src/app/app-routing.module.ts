@@ -100,10 +100,7 @@ const routes: Routes = [
     path: 'alt-info-vacinas',
     loadChildren: () => import('./pages/alt-info-vacinas/alt-info-vacinas.module').then( m => m.AltInfoVacinasPageModule)
   },
-  {
-    path: 'perfil2',
-    loadChildren: () => import('./perfil2/perfil2.module').then( m => m.Perfil2PageModule)
-  },
+
 ];
 
 @NgModule({

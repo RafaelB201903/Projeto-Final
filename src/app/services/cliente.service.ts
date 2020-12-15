@@ -133,7 +133,7 @@ export class ClienteService {
     // carregar o perfil do cliente (qualquer coleção)
     buscaPerfilPorId(uid: any): Observable<any> { // uid -> authenticator
         return from(new Observable(observe => {
-            this.firestore.collection('perfil').doc(uid).snapshotChanges().subscribe(response => {
+            this.firestore.collection('perfil-cliente').doc(uid).snapshotChanges().subscribe(response => {
                 if (response.payload.exists !== false) {
 
                     let cliente: Cliente = new Cliente();
@@ -153,7 +153,7 @@ export class ClienteService {
     atualizaPerfil(uid, dados) {
         return from(new Observable(observe => {
 
-            this.firestore.collection('perfil').doc(uid).set(dados).then(response => {
+            this.firestore.collection('perfil-cliente').doc(uid).set(dados).then(response => {
                 observe.next("Atualizado com sucesso!");
             }, (err) => {
                 observe.error("Erro ao atualizar!");

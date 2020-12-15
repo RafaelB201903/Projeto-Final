@@ -1,6 +1,6 @@
+import { PetShopService } from './services/petshop.services';
 import { VacinaService } from './services/vacina.service';
 import { ClienteService } from './services/cliente.service';
-import { PetService } from './services/pet.service';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +17,8 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 
 import { HttpClientModule } from '@angular/common/http';
+import { PetService } from './services/pet.service';
+import { PetshopService } from './services/petshop.service';
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     SplashScreen,
     PetService,
     VacinaService,
+    PetshopService,
     ClienteService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

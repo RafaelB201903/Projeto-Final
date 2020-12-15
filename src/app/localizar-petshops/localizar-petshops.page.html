@@ -15,7 +15,7 @@
  
     
 
-    <ion-card >
+    <ion-card *ngFor="let petshop of lista">
 
       
   
@@ -33,10 +33,10 @@
           
   
          <ul style="list-style: none;">
-          <h3>Estrela Petshop</h3>
-          <li><ion-icon name="location-outline"></ion-icon> Rua das flores 85 n° 1750</li>
-          <li><ion-icon name="business-outline"></ion-icon> Campo Grande</li>
-          <li><ion-icon name="call-outline"></ion-icon> 21 98593-2493</li>     
+          <h3>{{petshop.nome}}</h3>
+          <li><ion-icon name="location-outline"></ion-icon>{{petshop.endereco}}</li>
+          <li><ion-icon name="business-outline"></ion-icon>{{petshop.bairro}}</li>
+          <li><ion-icon name="call-outline"></ion-icon>{{petshop.telefone}}</li>     
         </ul>
       </ion-col>
 
