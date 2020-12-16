@@ -2,6 +2,7 @@ import { PetService } from './../services/pet.service';
 import { TemplateService } from './../services/template.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-add-info-pet',
@@ -11,13 +12,20 @@ import { Component, OnInit } from '@angular/core';
 export class AddInfoPetPage implements OnInit {
 
   formGroup: FormGroup;
-
+ idcliente: string ="";
 
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
-    private petServ: PetService) 
+    private petServ: PetService,
+    private auth : AngularFireAuth) 
     {
+      
+      this.auth.currentUser.then(response=>{
+        this.idcliente=response.uid;
+        this.iniciarForm();
+      })
       this.iniciarForm();
+
      }
 
   ngOnInit() {
@@ -28,7 +36,7 @@ export class AddInfoPetPage implements OnInit {
     this.formGroup = this.formBuilder.group({
       //aqui dentr vou colocar os campos do formulario
       // campos que preciso no cadastro, id gerado de forma automatica
-      
+      idcliente: [this.idcliente],
       nomedopet: [],
       raca: [],
       especie: [],
