@@ -44,6 +44,10 @@ export class InfoVacinasPage implements OnInit {
     console.log(vacina.id)
   }
 
+  excluir(vacina){
+    this.navCtrl.navigateForward(['/del-vacina',vacina.id])
+
+  }
   
 
 }

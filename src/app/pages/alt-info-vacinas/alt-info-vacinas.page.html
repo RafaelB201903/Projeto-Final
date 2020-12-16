@@ -6,11 +6,6 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
   </ion-toolbar> 
-      
-      
-    
-    
-  
 </ion-header>
 
 <ion-content>
@@ -22,63 +17,45 @@
   <ion-grid>
 
       <ion-row>
-        
         <ion-col>
           <div><strong>Medicamento:</strong></div>
         </ion-col>
-       
-        
       </ion-row>
   
       <ion-row>
-        
         <ion-col>
           <div id="info" ><ion-input type="text"  formControlName="medicamento"></ion-input> </div>
         </ion-col>
-        
-        
       </ion-row>
-     
+  
         <ion-row>
           <ion-col>
             <div><strong>Data: </strong></div>
-          </ion-col>
-          
-          
+          </ion-col>  
         </ion-row>
     
-        <ion-row>
-
-          
+        <ion-row>   
           <ion-col >
-            <div id="info" ><ion-input type="date" formGroupName="data"></ion-input> </div>
-          </ion-col>
-          
+            <div id="info" ><ion-input type="date" formControlName="data"></ion-input> </div>
+          </ion-col>     
         </ion-row>
 
-        <ion-row>
-          
+        <ion-row>    
           <ion-col>
             <div><strong>Proxima dose:</strong></div>
           </ion-col>
-          
         </ion-row>
 
         <ion-row>
-
-          
           <ion-col >
             <div id="info" ><ion-input type="date" formControlName="proximadose"></ion-input> </div>
           </ion-col>
           
         </ion-row>
 
-        <ion-button expand="full" color="warning">alterar</ion-button>
-        
-
-    
+        <ion-button (click)="atualizar()" expand="full" color="warning">Alterar</ion-button>
+  
   </ion-grid>
-
 
 </form>
 

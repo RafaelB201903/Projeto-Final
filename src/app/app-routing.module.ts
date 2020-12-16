@@ -100,6 +100,10 @@ const routes: Routes = [
     path: 'alt-info-vacinas/:id',
     loadChildren: () => import('./pages/alt-info-vacinas/alt-info-vacinas.module').then( m => m.AltInfoVacinasPageModule)
   },
+  {
+    path: 'del-vacina/:id',
+    loadChildren: () => import('./pages/del-vacina/del-vacina.module').then( m => m.DelVacinaPageModule)
+  },
 
 ];
 

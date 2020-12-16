@@ -4,6 +4,7 @@ import { Vacina } from './../../model/vacina';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { TemplateService } from 'src/app/services/template.service';
 
 @Component({
   selector: 'app-alt-info-vacinas',
@@ -18,7 +19,8 @@ export class AltInfoVacinasPage implements OnInit {
   constructor(private vacinaService : VacinaService,
     private navCtrl : NavController,
     private route: ActivatedRoute,
-    private formBuilder : FormBuilder) {
+    private formBuilder : FormBuilder,
+    private template : TemplateService) {
       this.iniciarForm();//dados n chegaram
      }
 
@@ -30,7 +32,9 @@ export class AltInfoVacinasPage implements OnInit {
 
      this.vacinaService.buscaPorId(id).subscribe(response=>{
        this.vacina = response;//acoma ele busca info por id
-       console.log(this.vacina);//inicio o form com as info nos inputs
+       console.log(this.vacina);
+       this.iniciarForm();
+       //inicio o form com as info nos inputs
      })
       
     })
@@ -38,15 +42,35 @@ export class AltInfoVacinasPage implements OnInit {
   }
 
   atualizar(){
+    this.vacinaService.atualizarVacina(this.formGroup.value).subscribe(response => {
+        
+      console.log("Atualizado com sucesso");
+
+      ;//janelinha de carregamento
+      this.template.myAlert(response);//response lá do service
+      //
+      this.navCtrl.navigateBack(['/info-vacinas'])
+      
+    },erro => {
+      console.log("Erro")
+
+    
+      this.template.myAlert("Erro ao Cadastrar");
+    })
+
 
   }
 
   iniciarForm() {//os dados vão chegar do banco aqui
     this.formGroup = this.formBuilder.group({
+
+      id: [this.vacina.id],
       medicamento: [this.vacina.medicamento],
       data: [this.vacina.data],
       proximadose: [this.vacina.proximadose],
       
+      
     })
   }
 }
+
