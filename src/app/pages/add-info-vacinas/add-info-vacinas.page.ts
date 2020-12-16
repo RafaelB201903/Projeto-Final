@@ -1,3 +1,4 @@
+import { NavController } from '@ionic/angular';
 import { VacinaService } from './../../services/vacina.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -16,7 +17,8 @@ export class AddInfoVacinasPage implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
-    private VacinaService: VacinaService) 
+    private VacinaService: VacinaService,
+    private navCtrl : NavController) 
     {
       this.iniciarForm();
      }
@@ -31,13 +33,15 @@ export class AddInfoVacinasPage implements OnInit {
       // campos que preciso no cadastro, id gerado de forma automatica
       
       medicamento: [],
-     proximadose: [],
-     data: []
+      data: [],
+      proximadose: [],
+     
     })//NAO ESTOU FAZENDO VALIDAÇÃO OU SEJA SE ESQUECERMOS UM 
     //REGISTRO ELE N DARÁ ERRO (O FIREBASE)
   }
 
 
+  
   cadastrar() {
     //template de carregamento
     
@@ -45,14 +49,14 @@ export class AddInfoVacinasPage implements OnInit {
       //abre janela no inicio do carregamento
 
       //quando eu chamo o formGroup.value eles chamam todos esses dados lá de cima
-      this.VacinaService.cadastrar(this.formGroup.value).subscribe(response => {
+      this.VacinaService.cadastrarVacina(this.formGroup.value).subscribe(response => {
         
         console.log("Cadastrado com sucesso");
 
         ;//janelinha de carregamento
         this.template.myAlert(response);//response lá do service
         //
-
+        this.navCtrl.navigateBack(['/info-vacinas'])
         
       },erro => {
         console.log("Erro")
@@ -63,5 +67,7 @@ export class AddInfoVacinasPage implements OnInit {
 
     
   }
+
+ 
 
 }

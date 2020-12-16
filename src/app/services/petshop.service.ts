@@ -2,7 +2,6 @@ import { Petshop } from '../model/petshop';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable, from } from 'rxjs';
-import { Pet } from '../model/pet';
 
 @Injectable()
 

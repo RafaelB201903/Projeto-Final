@@ -14,7 +14,7 @@ export class LocalizarPetshopsPage implements OnInit {
 
 
   lista : Petshop[] = [];
-  clienteServ: any;
+  
   constructor(private petshopService : PetshopService,
     private navCtrl : NavController) { }
 
@@ -29,7 +29,8 @@ export class LocalizarPetshopsPage implements OnInit {
       //solicitando uma resposta do servidor
       this.lista = response;
       console.log(this.lista);
-
+      
+      
       
     }, err=> {
       //o lista de cliente retorna observable 
@@ -44,6 +45,21 @@ export class LocalizarPetshopsPage implements OnInit {
       this.lista = response;
     });
   }
+
+ 
   
+ visualizar(petshop){
+  //navigateFordward => para navegar pra frente, e n retornar
+  //quero abrir essa pagina e quero enviar o cliente.id
+  this.navCtrl.navigateForward(['/ver-mais-petshop',petshop.id])
+  console.log(petshop.id)
+}
+
+visualizar2(petshop){
+  //navigateFordward => para navegar pra frente, e n retornar
+  //quero abrir essa pagina e quero enviar o cliente.id
+  this.navCtrl.navigateForward(['/agendar-pedido',petshop.id])
+  console.log(petshop.id)
+}
 
 }

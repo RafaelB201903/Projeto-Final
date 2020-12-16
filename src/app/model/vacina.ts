@@ -1,5 +1,6 @@
 export class Vacina{
     
+    id:string;
     medicamento: string;
     proximadose:string;
     data:string;

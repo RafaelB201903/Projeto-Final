@@ -1,4 +1,9 @@
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { VacinaService } from './../../services/vacina.service';
+import { Vacina } from './../../model/vacina';
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-alt-info-vacinas',
@@ -7,9 +12,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AltInfoVacinasPage implements OnInit {
 
-  constructor() { }
+  formGroup : FormGroup;
+  vacina : Vacina = new Vacina();
+  
+  constructor(private vacinaService : VacinaService,
+    private navCtrl : NavController,
+    private route: ActivatedRoute,
+    private formBuilder : FormBuilder) {
+      this.iniciarForm();//dados n chegaram
+     }
 
   ngOnInit() {
+    
+    this.route.paramMap.subscribe(url=>{
+      let id = url.get('id');
+      console.log(id)
+
+     this.vacinaService.buscaPorId(id).subscribe(response=>{
+       this.vacina = response;//acoma ele busca info por id
+       console.log(this.vacina);//inicio o form com as info nos inputs
+     })
+      
+    })
+    
   }
 
+  atualizar(){
+
+  }
+
+  iniciarForm() {//os dados vão chegar do banco aqui
+    this.formGroup = this.formBuilder.group({
+      medicamento: [this.vacina.medicamento],
+      data: [this.vacina.data],
+      proximadose: [this.vacina.proximadose],
+      
+    })
+  }
 }

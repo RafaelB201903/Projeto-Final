@@ -10,7 +10,7 @@ import { TabsPage } from './tabs.page';
       component: TabsPage,
       children: [
         {
-            path: 'info-pet',
+            path: 'info-pet/:id',
             children: [
               {
                 path: '',

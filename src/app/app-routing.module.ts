@@ -37,7 +37,7 @@ const routes: Routes = [
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
   {
-    path: 'tabs/:id',
+    path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
   },
   {
@@ -65,11 +65,11 @@ const routes: Routes = [
     loadChildren: () => import('./localizar-petshops/localizar-petshops.module').then( m => m.LocalizarPetshopsPageModule)
   },
   {
-    path: 'agendar-pedido',
+    path: 'agendar-pedido/:id',
     loadChildren: () => import('./agendar-pedido/agendar-pedido.module').then( m => m.AgendarPedidoPageModule)
   },
   {
-    path: 'ver-mais-petshop',
+    path: 'ver-mais-petshop/:id',
     loadChildren: () => import('./ver-mais-petshop/ver-mais-petshop.module').then( m => m.VerMaisPetshopPageModule)
   },
   {
@@ -93,11 +93,11 @@ const routes: Routes = [
     loadChildren: () => import('./atualizar-info/atualizar-info.module').then( m => m.AtualizarInfoPageModule)
   },
   {
-    path: 'alt-info-pet',
+    path: 'alt-info-pet/:id',
     loadChildren: () => import('./pages/alt-info-pet/alt-info-pet.module').then( m => m.AltInfoPetPageModule)
   },
   {
-    path: 'alt-info-vacinas',
+    path: 'alt-info-vacinas/:id',
     loadChildren: () => import('./pages/alt-info-vacinas/alt-info-vacinas.module').then( m => m.AltInfoVacinasPageModule)
   },
 

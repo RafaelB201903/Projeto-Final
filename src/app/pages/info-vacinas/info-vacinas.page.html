@@ -10,7 +10,10 @@
 
   <h1>Informações sobre vacinas</h1>
 
-  <ion-grid>
+  <ion-card  *ngFor=" let vacina of lista ">
+
+    {{vacina.id}}
+  <ion-grid >
 
       <ion-row>
         
@@ -23,7 +26,7 @@
   
       <ion-row>
         <ion-col>
-          <div id="info"><ion-input  ></ion-input> </div>
+          <div id="info"><ion-input  >{{vacina.medicamento}}</ion-input> </div>
         </ion-col>
         
         
@@ -43,10 +46,10 @@
         <ion-row>
 
           <ion-col>
-          <div id="info"><ion-input ></ion-input> </div>
+          <div id="info"><ion-input >{{vacina.proximadose}}</ion-input> </div>
         </ion-col>
         <ion-col>
-          <div id="info"><ion-input  ></ion-input> </div>
+          <div id="info"><ion-input  >{{vacina.data}}</ion-input> </div>
         </ion-col>
           
         </ion-row>
@@ -57,62 +60,13 @@
           </ion-col>
 
           <ion-col col-6>
-            <ion-button [routerLink]="['/alt-info-vacinas']" expand="full" color="warning">Alterar</ion-button>
+            <ion-button (click)="visualizar(vacina)" expand="full" color="warning">Alterar</ion-button>
           </ion-col>
         </ion-row>
 
-       
-
-        <ion-row>
-        
-          <ion-col>
-            <div><strong>Medicamento:</strong></div>
-          </ion-col>
-         
-          
-        </ion-row>
-    
-        <ion-row>
-          <ion-col>
-            <div id="info"><ion-input  ></ion-input> </div>
-          </ion-col>
-          
-          
-          
-        </ion-row>
-       
-          <ion-row>
-            <ion-col>
-              <div><strong>Proxima dose: </strong></div>
-            </ion-col>
-            <ion-col>
-              <div><strong>Data </strong></div>
-            </ion-col>
-            
-          </ion-row>
-      
-          <ion-row>
-  
-            <ion-col>
-            <div id="info"><ion-input ></ion-input> </div>
-          </ion-col>
-          <ion-col>
-            <div id="info"><ion-input  ></ion-input> </div>
-          </ion-col>
-            
-          </ion-row>
-  
-          <ion-row>
-            <ion-col col-6>
-              <ion-button  expand="full" color="danger">excluir</ion-button>
-            </ion-col>
-  
-            <ion-col col-6>
-              <ion-button  expand="full" color="warning">Alterar</ion-button>
-            </ion-col>
-          </ion-row>
-    
   </ion-grid>
+
+</ion-card>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button [routerLink]="['/add-info-vacinas']">
