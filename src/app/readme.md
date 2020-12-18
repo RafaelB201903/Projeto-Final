@@ -43,4 +43,16 @@ categoria por estado ou bairro. OLX referencia
 were podemos fazer com o searchbar
 
 firebase.google.com/docs/firestore/query-data/queries
+
+
+-------------------------------------------------------------------------------------------------------------------
+Alterações:
+
+-Melhorar o topo do menu;
+-Melhorar o search bar, tanto no design e tanto na hora de buscar;
+-Implementar um metodo para buscar por Estado e Bairro;
+-Implementar o esqueci minha senha;
+-Adicionar imagem ou foto atraves do armazenamento do celular;
+
+
  
