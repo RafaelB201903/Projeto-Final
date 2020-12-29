@@ -10,10 +10,6 @@ import { NavController } from '@ionic/angular';
 })
 export class GerenciarPetsPage implements OnInit {
 
-
-
-
-
   lista : Pet[] = [];
 
   constructor(private petService : PetService,
@@ -33,7 +29,7 @@ export class GerenciarPetsPage implements OnInit {
 
       
     }, err=> {
-      //o lista de cliente retorna observable 
+    //o lista de cliente retorna observable 
     })
   }
 

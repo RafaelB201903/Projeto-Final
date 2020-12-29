@@ -12,7 +12,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AddInfoPetPage implements OnInit {
 
   formGroup: FormGroup;
- idcliente: string ="";
+  idcliente: string ="";
 
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
@@ -56,10 +56,7 @@ export class AddInfoPetPage implements OnInit {
 
   cadastrar() {
     //template de carregamento
-    
-
       //abre janela no inicio do carregamento
-
       //quando eu chamo o formGroup.value eles chamam todos esses dados lá de cima
       this.petServ.cadastrar(this.formGroup.value).subscribe(response => {
         

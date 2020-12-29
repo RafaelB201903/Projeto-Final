@@ -3,6 +3,8 @@ import { VacinaService } from './../../services/vacina.service';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Vacina } from 'src/app/model/vacina';
+import { ActivatedRoute } from '@angular/router';
+import { Pet } from 'src/app/model/pet';
 
 @Component({
   selector: 'app-info-vacinas',
@@ -12,10 +14,12 @@ import { Vacina } from 'src/app/model/vacina';
 export class InfoVacinasPage implements OnInit {
 
   lista : Vacina[] = [];
+  idpet: string ="";
 
   constructor(private vacinaService : VacinaService,
     private navCtrl : NavController,
     private template : TemplateService,
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit() {// os cliente precisam estar aqui antes da pagina carregar 
@@ -34,6 +38,15 @@ export class InfoVacinasPage implements OnInit {
     }, err=> {
       //o lista de cliente retorna observable 
     })
+
+    this.route.paramMap.subscribe(url=>{
+
+      let id = url.get('id');
+      
+
+      this.idpet = id;
+      console.log(this.idpet);
+    })
   }
 
   //metodo para poder enviar o id do cliente pela url
@@ -42,6 +55,13 @@ export class InfoVacinasPage implements OnInit {
     //quero abrir essa pagina e quero enviar o cliente.id
     this.navCtrl.navigateForward(['/alt-info-vacinas',vacina.id])
     console.log(vacina.id)
+  }
+
+  adicionar(idpet){
+    //navigateFordward => para navegar pra frente, e n retornar
+    //quero abrir essa pagina e quero enviar o cliente.id
+    this.navCtrl.navigateForward(['/add-info-vacinas',this.idpet])
+    console.log(this.idpet)
   }
 
   excluir(vacina){

@@ -45,7 +45,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/info-pet/info-pet.module').then( m => m.InfoPetPageModule)
   },
   {
-    path: 'add-info-vacinas',
+    path: 'add-info-vacinas/:id',
     loadChildren: () => import('./pages/add-info-vacinas/add-info-vacinas.module').then( m => m.AddInfoVacinasPageModule)
   },
   {

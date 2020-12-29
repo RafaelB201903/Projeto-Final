@@ -1,3 +1,5 @@
+import { AltInfoPetPageModule } from './../alt-info-pet/alt-info-pet.module';
+import { AltInfoPetPage } from './../alt-info-pet/alt-info-pet.page';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -19,7 +21,16 @@ import { TabsPage } from './tabs.page';
             ]
         },
         {
-          path: 'info-vacinas',
+          path: 'alt-info-pet/:id',
+          children: [
+            {
+              path: '',
+              loadChildren: () => import('../alt-info-pet/alt-info-pet.module').then(m => m.AltInfoPetPageModule)
+            }
+          ]
+        },
+        {
+          path: 'info-vacinas/:id',
           children: [
             {
               path: '',
@@ -29,16 +40,11 @@ import { TabsPage } from './tabs.page';
         },
         {
           path: '',
-          redirectTo: '/tabs/info-pet',
+          redirectTo: '/tabs/info-pet/:id',
           pathMatch: 'full'
         } 
       ]
     },
-    {
-      path: '',
-      redirectTo: '/info-pet',
-      pathMatch: 'full'
-    }
   ];
 
 @NgModule({

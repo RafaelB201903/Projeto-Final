@@ -25,7 +25,7 @@ export class PetService {
                 response.map(obj => {
                     // será repetido para cada registro, cada registro do Firestore se chama obj
                     let pet: Pet = new Pet();
-                    pet.setData(obj.payload.doc.data());// obj.payload.doc.data() -> Dados do cliente
+                    pet.setData(obj.payload.doc.data()); // obj.payload.doc.data() -> Dados do cliente
                     pet.id = obj.payload.doc.id; // inserindo ID
                     lista.push(pet); // adicionando o cliente na lista // push é adicionar
                 });

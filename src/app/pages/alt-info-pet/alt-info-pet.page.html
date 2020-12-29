@@ -17,21 +17,21 @@
     <ion-card-subtitle>Altere as informações do seu pet</ion-card-subtitle>
   </ion-card-header>
 
-  <form>
+  <form [formGroup]="formGroup">
 
   <ion-item>
     <ion-label position="floating">Nome do Pet:</ion-label>
-    <ion-input></ion-input>
+    <ion-input value="{{pet.nomedopet}}" formControlName="nomedopet"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Raça:</ion-label>
-    <ion-input></ion-input>
+    <ion-input value="{{pet.raca}}" formControlName="raca"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>Especie:</ion-label>
-    <ion-select >
+    <ion-select value="{{pet.especie}}" formControlName="especie">
       <ion-select-option value="Cao">Cão</ion-select-option>
       <ion-select-option value="Gato">Gato</ion-select-option>
     </ion-select>
@@ -39,56 +39,56 @@
 
   <ion-item>
     <ion-label position="floating">Cor:</ion-label>
-    <ion-input></ion-input>
+    <ion-input value="{{pet.cor}}" formControlName="cor"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>Sexo:</ion-label>
-    <ion-select >
-      <ion-select-option value="cat">Macho</ion-select-option>
-      <ion-select-option value="dog">Fêmea</ion-select-option>
+    <ion-select value="{{pet.sexo}}" formControlName="sexo">
+      <ion-select-option value="Macho">Macho</ion-select-option>
+      <ion-select-option value="Fêmea">Fêmea</ion-select-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Data de Nascimento:</ion-label>
-    <ion-input></ion-input>
+    <ion-input value="{{pet.datadenasc}}" formControlName="datadenasc"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Tutor</ion-label>
-    <ion-input></ion-input>
+    <ion-input value="{{pet.tutor}}" formControlName="tutor"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Endereço:</ion-label>
-    <ion-input></ion-input>
+    <ion-input value="{{pet.endereco}}" formControlName="endereco"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Cidade:</ion-label>
-    <ion-input></ion-input>
+    <ion-input value="{{pet.cidade}}" formControlName="cidade"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Estado:</ion-label>
-    <ion-input></ion-input>
+    <ion-input value="{{pet.estado}}" formControlName="estado"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Telefone:</ion-label>
-    <ion-input></ion-input>
+    <ion-input value="{{pet.telefone}}" formControlName="telefone"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Celular:</ion-label>
-    <ion-input></ion-input>
+    <ion-input value="{{pet.celular}}"> </ion-input>
   </ion-item>
 
 
 </form>
 
-  <ion-button shape="round" expand="full" color="success">Salvar</ion-button>
+  <ion-button (click)="atualizar()" shape="round" expand="full" color="success">Salvar</ion-button>
 </ion-card>
 
 </ion-content>
