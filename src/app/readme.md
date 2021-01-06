@@ -43,6 +43,8 @@ Vacinas:
 -enviando id;   ok
 -Listar vacinas através do id do pet; X
 
+CONSERTAR OS ERROS DOS SERVIÇOS DE EXCLUIR, ALTERAR E ADICIONAR.
+
 -OBS: Preciso fazer com que as vacinas se 
 conectem com o pet especifico.
 
