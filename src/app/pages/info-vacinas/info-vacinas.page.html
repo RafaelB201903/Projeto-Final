@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title >Vacinas</ion-title>
-    
+    <ion-buttons slot="start" style="color:floralwhite">      
+      <ion-back-button></ion-back-button>    
+     </ion-buttons>  
     
   </ion-toolbar>
 </ion-header>
@@ -12,7 +14,7 @@
 
   <ion-card  *ngFor=" let vacina of lista ">
 
-    {{vacina.id}}
+   
   <ion-grid >
 
       <ion-row>

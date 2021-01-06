@@ -1,21 +1,20 @@
-import { Vacina } from 'src/app/model/vacina';
-import { VacinaService } from './../../services/vacina.service';
+import { PetService } from 'src/app/services/pet.service';
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { TemplateService } from 'src/app/services/template.service';
+import { Pet } from 'src/app/model/pet';
 
 @Component({
-  selector: 'app-del-vacina',
-  templateUrl: './del-vacina.page.html',
-  styleUrls: ['./del-vacina.page.scss'],
+  selector: 'app-del-pet',
+  templateUrl: './del-pet.page.html',
+  styleUrls: ['./del-pet.page.scss'],
 })
-export class DelVacinaPage implements OnInit {
+export class DelPetPage implements OnInit {
 
-  
-  vacina : Vacina = new Vacina();
+  pet : Pet = new Pet();
 
-  constructor(private VacinaService : VacinaService,
+  constructor(private PetService : PetService,
     private route: ActivatedRoute,//para capturar o id daquela rota lá n url
     private navCtrl : NavController,
     private template : TemplateService) { }
@@ -32,13 +31,13 @@ export class DelVacinaPage implements OnInit {
       //uma vez que eu tenho o id vou fazer uma consulta
       //no servidor utilizando esse id
       //buscaPorId(id) => vou enviar o id
-      this.VacinaService.buscaPorId(id).subscribe(response=>{
+      this.PetService.buscaPorId(id).subscribe(response=>{
         
         //para eu armazenar esse cliente primeiro tenho que
         //declarar ele como variavel
-        this.vacina = response;//response vai ser o cliente
+        this.pet = response;//response vai ser o cliente
         //os dados que receber no response vou colocar no cliente
-        console.log(this.vacina);
+        console.log(this.pet);
       
       })
 
@@ -53,7 +52,7 @@ export class DelVacinaPage implements OnInit {
       load.present();//abre janela no inicio do carregamento
 
       //quando eu chamo o formGroup.value eles chamam todos esses dados lá de cima
-      this.VacinaService.excluirVacina(this.vacina).subscribe(response => {
+      this.PetService.excluir(this.pet).subscribe(response => {
 
 
 
@@ -61,7 +60,7 @@ export class DelVacinaPage implements OnInit {
 
         //fecha janelinha
 
-        this.navCtrl.navigateForward(['/info-vacinas']);
+        this.navCtrl.navigateForward(['/gerenciar-pets']);
       }, erro => {
 
 
@@ -71,5 +70,4 @@ export class DelVacinaPage implements OnInit {
 
     })
   }
-
 }

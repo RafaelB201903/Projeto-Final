@@ -22,6 +22,7 @@ export class AddInfoPetPage implements OnInit {
       
       this.auth.currentUser.then(response=>{
         this.idcliente=response.uid;
+        console.log(this.idcliente)
         this.iniciarForm();
       })
       this.iniciarForm();

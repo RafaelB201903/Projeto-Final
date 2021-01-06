@@ -12,7 +12,7 @@
 
 <ion-content>
 
-  
+  <ion-card>
   
   <ion-grid>
 
@@ -79,11 +79,31 @@
       </ion-col>
     </ion-row>
 
-    <ion-button (click)="visualizar()" expand="full" color="warning">alterar</ion-button>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="alterar()" expand="full" color="warning">alterar</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="deletar()" expand="full" color="danger">excluir</ion-button>
+      </ion-col>
+    </ion-row>
+
+    
 
   </ion-grid>
 
-  
+</ion-card>
+
+<ion-card>
+<ion-card-header>
+  <ion-card-title>Carteirinha de Vacinação</ion-card-title>
+  <ion-card-subtitle>Gerencie aqui as vacinações do seu pet</ion-card-subtitle>
+</ion-card-header>
+
+<ion-card-content>
+  <ion-button (click)="visualizarCarteirinha()" expand="full" >Ir para carteirinha</ion-button>
+</ion-card-content>
+</ion-card>
 
      
     

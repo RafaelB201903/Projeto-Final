@@ -34,17 +34,22 @@ export class InfoPetPage implements OnInit {
     })
   }
 
-  visualizar(){
+  alterar(){
     //navigateFordward => para navegar pra frente, e n retornar
     //quero abrir essa pagina e quero enviar o cliente.id
-    this.navCtrl.navigateForward(['/tabs/alt-info-pet',this.idpet])
+    this.navCtrl.navigateForward(['/alt-info-pet',this.idpet])
     console.log(this.idpet)
   }
 
-  visualizar2(){
+  deletar(){
     //navigateFordward => para navegar pra frente, e n retornar
     //quero abrir essa pagina e quero enviar o cliente.id
-    this.navCtrl.navigateForward(['/tabs/info-vacinas',this.idpet])
+    this.navCtrl.navigateForward(['/del-pet',this.idpet])
+    console.log(this.idpet)
+  }
+
+  visualizarCarteirinha(){
+    this.navCtrl.navigateForward(['info-vacinas',this.idpet])
     console.log(this.idpet)
   }
 

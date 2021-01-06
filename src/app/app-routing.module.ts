@@ -36,10 +36,7 @@ const routes: Routes = [
     path: 'perfil',
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
-  {
-    path: 'tabs',
-    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
-  },
+  
   {
     path: 'info-pet/:id',
     loadChildren: () => import('./pages/info-pet/info-pet.module').then( m => m.InfoPetPageModule)
@@ -53,7 +50,7 @@ const routes: Routes = [
     loadChildren: () => import('./add-info-pet/add-info-pet.module').then( m => m.AddInfoPetPageModule)
   },
   {
-    path: 'info-vacinas',
+    path: 'info-vacinas/:id',
     loadChildren: () => import('./pages/info-vacinas/info-vacinas.module').then( m => m.InfoVacinasPageModule)
   },
   {
@@ -103,6 +100,10 @@ const routes: Routes = [
   {
     path: 'del-vacina/:id',
     loadChildren: () => import('./pages/del-vacina/del-vacina.module').then( m => m.DelVacinaPageModule)
+  },
+  {
+    path: 'del-pet/:id',
+    loadChildren: () => import('./pages/del-pet/del-pet.module').then( m => m.DelPetPageModule)
   },
 
 ];

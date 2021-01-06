@@ -5,7 +5,7 @@ Localizar petshop:
 
 -Listar;        ok
 -enviando id;   ok
--Listar info ver-mais-petshop; X
+-Listar info ver-mais-petshop; X    RAFAEL
 -Implementar o pedido; X
 
 (Menos do ver-mais para o agendar que ainda está dando erro)
@@ -17,7 +17,7 @@ Gerenciar Pet:
 -Cadastrar;                             ok
 -Listar;                                ok
 -Alterar;                               ok
--Exclusão;                              X
+-Exclusão;                              ok 06/01/2021
 -Visualizar;                            ok
 -enviando id atualizar;                 ok
 -enviando id vacina;                    ok
@@ -50,7 +50,19 @@ conectem com o pet especifico.
 -OBS²: Cadastrei a vacina com o id do pet, agora é só
 listar as vacinas referente aquele id.
 
+-----------------------------------------------
 
+Perfil:
+
+-Listar informações do usuário;     X
+-Inserir imagem do usuário;         X
+-Implementar o esqueci minha senha; X
+
+------------------------------------------------
+
+Menu:
+
+-Melhorar o design do menu;
 
 
 ------------------------------------------------
@@ -68,18 +80,8 @@ firebase.google.com/docs/firestore/query-data/queries.
 Alterações:
 
 
-
--Melhorar o topo do menu;
-
 -Melhorar o search bar, tanto no design e tanto na hora de buscar;
 
 -Implementar um metodo para buscar por Estado e Bairro;
 
--Implementar o esqueci minha senha;
-
--Adicionar imagem ou foto atraves do armazenamento do celular;
-
-
-
-FINALIZAR A ALTERAÇÃO DO 
  

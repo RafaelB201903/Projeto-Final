@@ -37,7 +37,7 @@ export class GerenciarPetsPage implements OnInit {
   visualizar(pet){
     //navigateFordward => para navegar pra frente, e n retornar
     //quero abrir essa pagina e quero enviar o cliente.id
-    this.navCtrl.navigateForward(['/tabs/info-pet',pet.id])
+    this.navCtrl.navigateForward(['/info-pet',pet.id])
     console.log(pet.id)
   }
   

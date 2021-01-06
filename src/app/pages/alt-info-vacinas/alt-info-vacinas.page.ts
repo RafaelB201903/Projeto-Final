@@ -49,7 +49,7 @@ export class AltInfoVacinasPage implements OnInit {
       ;//janelinha de carregamento
       this.template.myAlert(response);//response lá do service
       //
-      this.navCtrl.navigateBack(['/info-vacinas'])
+      this.navCtrl.navigateForward(['/info-vacinas'])
       
     },erro => {
       console.log("Erro")

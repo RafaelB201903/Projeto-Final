@@ -11,7 +11,7 @@ export class PetService {
     constructor(private firestore: AngularFirestore) {}
 
 
-    listaDePets(): Observable<any> {
+    listaDePets(id): Observable<any> {
 
         // Observable -> Aguardar resposta do servidor
         return from(new Observable(observe => { // converter para Observable
@@ -19,13 +19,13 @@ export class PetService {
             // this.firestore.collection('cliente') -> Selecionar a coleção no Firestore
             // .snapshotChanges().subscribe -> Tentar buscar no servidor
             // response -> dados baixados do servidor, os clientes
-            this.firestore.collection('pet').snapshotChanges().subscribe(response => {
-                // transformar response em array de clientes
+            this.firestore.collection('pet').snapshotChanges().subscribe(response => {// transformar response em array de clientes
                 let lista: Pet[] = [];
                 response.map(obj => {
                     // será repetido para cada registro, cada registro do Firestore se chama obj
                     let pet: Pet = new Pet();
                     pet.setData(obj.payload.doc.data()); // obj.payload.doc.data() -> Dados do cliente
+                    console.log(obj.payload.doc.data())
                     pet.id = obj.payload.doc.id; // inserindo ID
                     lista.push(pet); // adicionando o cliente na lista // push é adicionar
                 });

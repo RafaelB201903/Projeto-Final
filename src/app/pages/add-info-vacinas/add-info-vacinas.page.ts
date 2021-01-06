@@ -72,7 +72,7 @@ export class AddInfoVacinasPage implements OnInit {
         ;//janelinha de carregamento
         this.template.myAlert(response);//response lá do service
         //
-        this.navCtrl.navigateBack(['/tabs/info-vacinas'])
+        this.navCtrl.navigateForward(['info-vacinas'])
         
       },erro => {
         console.log("Erro")
