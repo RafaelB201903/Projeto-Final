@@ -20,9 +20,13 @@ export class AtualizarInfoPage implements OnInit {
     
       this.iniciarForm(); // obrigatório inicializar o formulário
     
+      this.auth.authState.subscribe(response=>{
+        console.log(response.uid)
+      })
+
       this.auth.currentUser.then(response=>{ // auth.currentUser -> Obten dados do usuario  
         
-        console.log(response)
+        
 
 
         this.clienteServ.buscaPerfilPorId(response.uid).subscribe(response=>{
