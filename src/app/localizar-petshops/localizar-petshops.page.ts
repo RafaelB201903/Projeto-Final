@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Petshop } from '../model/petshop';
 import { NavController } from '@ionic/angular';
 import { PetshopService } from '../services/petshop.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-localizar-petshops',
@@ -16,10 +17,21 @@ export class LocalizarPetshopsPage implements OnInit {
   lista : Petshop[] = [];
   
   constructor(private petshopService : PetshopService,
-    private navCtrl : NavController) { }
+    private navCtrl : NavController,
+    private auth : AngularFireAuth) {
+      
+    }
 
   ngOnInit() {
+
+    this.auth.currentUser.then(response=>{
+      console.log(response.uid);
+    })
+
     this.petshopService.listaDePetshops().subscribe(response => {
+
+      
+
       //this.clienteServ.listaDeClientes() -> chamei a lista de clientes 
       //o ListaDeClientes é um OBSERVABLE dessa forma retorna um subscribe
       //Esse é o comando que irá aguardar a resposta do servidor
@@ -39,6 +51,9 @@ export class LocalizarPetshopsPage implements OnInit {
   }
 
   pesquisar(){
+    this.auth.credential.subscribe(resp=>{
+      console.log(resp);
+    })
     console.log("Busca por: "+this.nome.value)
     this.petshopService.buscaPorNome(this.nome.value).subscribe(response=>{
       this.lista = [];

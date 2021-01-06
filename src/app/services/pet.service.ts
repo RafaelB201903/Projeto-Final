@@ -19,7 +19,8 @@ export class PetService {
             // this.firestore.collection('cliente') -> Selecionar a coleção no Firestore
             // .snapshotChanges().subscribe -> Tentar buscar no servidor
             // response -> dados baixados do servidor, os clientes
-            this.firestore.collection('pet').snapshotChanges().subscribe(response => {// transformar response em array de clientes
+            this.firestore.collection("pet",ref => ref.where("idcliente","==",id)).snapshotChanges().subscribe(response => {
+                
                 let lista: Pet[] = [];
                 response.map(obj => {
                     // será repetido para cada registro, cada registro do Firestore se chama obj
