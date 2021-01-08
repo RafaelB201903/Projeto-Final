@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VerMaisPetshopPage implements OnInit {
 
-  petshop: any;
+  petshop: Petshop = new Petshop();
   id : string = "";
   idpetshop: string ="";
 
@@ -37,7 +37,7 @@ export class VerMaisPetshopPage implements OnInit {
           //Esse é o comando que irá aguardar a resposta do servidor
     
           //se o servidor responder ele fazer isso aqui
-        this.petshop=response;
+        this.petshop.setData(response);
     
           
         }, err=> {

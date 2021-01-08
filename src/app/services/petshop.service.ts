@@ -47,7 +47,7 @@ export class PetshopService {
             this.firestore.collection('perfil-petshop').doc(id).snapshotChanges().subscribe(response => {
                 // transformar response em array de clientes
                 let petshop: Petshop = new Petshop();
-                petshop.setData(response.payload.data)
+                petshop.setData(response.payload.data())
                 console.log("id" +id);
                 console.log(response.payload.data());
                 observe.next(petshop);
