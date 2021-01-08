@@ -20,7 +20,7 @@ export class VerMaisPetshopPage implements OnInit {
   constructor(private petshopService : PetshopService,
     private navCtrl : NavController,
     private auth : AngularFireAuth,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute) {//teste
 
       this.route.paramMap.subscribe(url=>{
 
