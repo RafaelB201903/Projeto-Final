@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddImagemPage implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
