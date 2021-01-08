@@ -15,6 +15,7 @@ export class PerfilPage implements OnInit {
     private navCtrl : NavController) { }
 
   ngOnInit() {
+   
     this.ClienteService.listaDeClientes().subscribe(response => {
       //this.clienteServ.listaDeClientes() -> chamei a lista de clientes 
       //o ListaDeClientes é um OBSERVABLE dessa forma retorna um subscribe
@@ -30,7 +31,7 @@ export class PerfilPage implements OnInit {
     }, err=> {
       //o lista de cliente retorna observable 
     })
-    
+  
   }
 
   }

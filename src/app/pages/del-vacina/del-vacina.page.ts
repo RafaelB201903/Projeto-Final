@@ -14,6 +14,7 @@ export class DelVacinaPage implements OnInit {
 
   
   vacina : Vacina = new Vacina();
+  idpet: string ="";
 
   constructor(private VacinaService : VacinaService,
     private route: ActivatedRoute,//para capturar o id daquela rota lá n url
@@ -27,6 +28,7 @@ export class DelVacinaPage implements OnInit {
     this.route.paramMap.subscribe(url=>{
       //variavel id que vai pegar o id da url
       let id = url.get('id');
+      this.idpet = id;
       console.log(id);
 
       //uma vez que eu tenho o id vou fazer uma consulta
@@ -61,7 +63,7 @@ export class DelVacinaPage implements OnInit {
 
         //fecha janelinha
 
-        this.navCtrl.navigateForward(['/info-vacinas']);
+        this.navCtrl.navigateBack(['/info-vacinas',this.idpet]);
       }, erro => {
 
 

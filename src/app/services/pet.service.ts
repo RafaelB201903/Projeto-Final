@@ -11,7 +11,7 @@ export class PetService {
     constructor(private firestore: AngularFirestore) {}
 
 
-    listaDePets(): Observable<any> {
+    listaDePets(id): Observable<any> {
 
         // Observable -> Aguardar resposta do servidor
         return from(new Observable(observe => { // converter para Observable
