@@ -12,7 +12,7 @@ export class VacinaService {
         
         ) {}
 
-    listaDeVacinas(): Observable<any> {
+    listaDeVacinas(id): Observable<any> {
 
         // Observable -> Aguardar resposta do servidor
         return from(new Observable(observe => { // converter para Observable
@@ -20,7 +20,7 @@ export class VacinaService {
             // this.firestore.collection('cliente') -> Selecionar a coleção no Firestore
             // .snapshotChanges().subscribe -> Tentar buscar no servidor
             // response -> dados baixados do servidor, os clientes
-            this.firestore.collection('vacina').snapshotChanges().subscribe(response => {
+            this.firestore.collection("vacina",ref => ref.where("idpet","==",id)).snapshotChanges().subscribe(response => {
                 // transformar response em array de clientes
                 let lista: Vacina[] = [];
                 response.map(obj => {

@@ -15,6 +15,7 @@ export class AltInfoVacinasPage implements OnInit {
 
   formGroup : FormGroup;
   vacina : Vacina = new Vacina();
+  idpet: string ="";
   
   constructor(private vacinaService : VacinaService,
     private navCtrl : NavController,
@@ -28,6 +29,7 @@ export class AltInfoVacinasPage implements OnInit {
     
     this.route.paramMap.subscribe(url=>{
       let id = url.get('id');
+      this.idpet = id;
       console.log(id)
 
      this.vacinaService.buscaPorId(id).subscribe(response=>{
@@ -49,7 +51,7 @@ export class AltInfoVacinasPage implements OnInit {
       ;//janelinha de carregamento
       this.template.myAlert(response);//response lá do service
       //
-      this.navCtrl.navigateForward(['/info-vacinas'])
+      this.navCtrl.navigateBack(['/info-vacinas',this.idpet])
       
     },erro => {
       console.log("Erro")

@@ -23,7 +23,7 @@ Gerenciar Pet:
 -enviando id vacina;                    ok
 -Arrumar o do vacina e do info-pet;     ok
 -Arrumar o erro do tabs do atualizar;   ok
--Listar o pet atraves do id do cliente; X
+-Listar o pet atraves do id do cliente; ok 08/01/2021
 
 (Ainda preciso Vincular o pet ao cliente, ou seja só aquele cliente poderá visualizar aquele seu pet.)
 
@@ -41,7 +41,9 @@ Vacinas:
 -Alterar;       ok
 -Excluir;       ok
 -enviando id;   ok
--Listar vacinas através do id do pet; X
+-Listar vacinas através do id do pet; ok 08/01/2021
+-Consertar o retorno dps de alterar;  ok 08/01/2021
+-Consertar o retorno dps de excluir;  ok 08/01/2021
 
 CONSERTAR OS ERROS DOS SERVIÇOS DE EXCLUIR, ALTERAR E ADICIONAR.
 
@@ -85,5 +87,13 @@ Alterações:
 -Melhorar o search bar, tanto no design e tanto na hora de buscar;
 
 -Implementar um metodo para buscar por Estado e Bairro;
+
+
+---------------------------------------------------------------------------------------------------------------------
+08/01/2021 - 10:50
+
+NOTA: Estou tentando fazer com que as páginas perfil e ver-mais-petshop puxem do banco de dados (firebase) as 
+informações, porém estou tendo dificuldades para puxar as informações através do doc (id).
+
 
  

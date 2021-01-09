@@ -20,7 +20,7 @@ export class GerenciarPetsPage implements OnInit {
 
        this.auth.currentUser.then(response=>{ // auth.currentUser -> Obten dados do usuario  
         this.id = response.uid;
-        this.petService.listaDePets(this.id).subscribe(response => {
+        this.petService.listaDePets(response.uid).subscribe(response => {
           //this.clienteServ.listaDeClientes() -> chamei a lista de clientes 
           //o ListaDeClientes é um OBSERVABLE dessa forma retorna um subscribe
           //Esse é o comando que irá aguardar a resposta do servidor

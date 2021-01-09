@@ -23,7 +23,17 @@ export class InfoVacinasPage implements OnInit {
     ) { }
 
   ngOnInit() {// os cliente precisam estar aqui antes da pagina carregar 
-    this.vacinaService.listaDeVacinas().subscribe(response => {
+    this.route.paramMap.subscribe(url=>{
+
+      let id = url.get('id');
+      
+
+      this.idpet = id;
+      console.log(this.idpet);
+    })
+
+
+    this.vacinaService.listaDeVacinas(this.idpet).subscribe(response => {
       //this.clienteServ.listaDeClientes() -> chamei a lista de clientes 
       //o ListaDeClientes é um OBSERVABLE dessa forma retorna um subscribe
       //Esse é o comando que irá aguardar a resposta do servidor
@@ -39,14 +49,7 @@ export class InfoVacinasPage implements OnInit {
       //o lista de cliente retorna observable 
     })
 
-    this.route.paramMap.subscribe(url=>{
-
-      let id = url.get('id');
-      
-
-      this.idpet = id;
-      console.log(this.idpet);
-    })
+    
   }
 
   //metodo para poder enviar o id do cliente pela url
