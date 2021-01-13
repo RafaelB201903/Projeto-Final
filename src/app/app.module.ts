@@ -1,3 +1,4 @@
+import { PedidoService } from './services/pedido.service';
 
 import { VacinaService } from './services/vacina.service';
 import { ClienteService } from './services/cliente.service';
@@ -40,6 +41,7 @@ import { PetshopService } from './services/petshop.service';
     VacinaService,
     PetshopService,
     ClienteService,
+    PedidoService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

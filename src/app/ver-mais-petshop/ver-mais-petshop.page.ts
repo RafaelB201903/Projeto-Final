@@ -20,7 +20,7 @@ export class VerMaisPetshopPage implements OnInit {
   constructor(private petshopService : PetshopService,
     private navCtrl : NavController,
     private auth : AngularFireAuth,
-    private route: ActivatedRoute) {//teste
+    private route: ActivatedRoute) {
 
       this.route.paramMap.subscribe(url=>{
 
@@ -32,11 +32,8 @@ export class VerMaisPetshopPage implements OnInit {
       
        
         this.petshopService.petshopsPorId(this.id).subscribe(response => {
-          //this.clienteServ.listaDeClientes() -> chamei a lista de clientes 
-          //o ListaDeClientes é um OBSERVABLE dessa forma retorna um subscribe
-          //Esse é o comando que irá aguardar a resposta do servidor
-    
-          //se o servidor responder ele fazer isso aqui
+
+
         this.petshop.setData(response);
     
           

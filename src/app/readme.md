@@ -5,8 +5,8 @@ Localizar petshop:
 
 -Listar;        ok
 -enviando id;   ok
--Listar info ver-mais-petshop; X    RAFAEL
--Implementar o pedido; X
+-Listar info ver-mais-petshop;  ok (13/01/2021) (RAFAEL)
+-Implementar o pedido;          parcialmente (13/01/2021)
 
 (Menos do ver-mais para o agendar que ainda está dando erro)
 
@@ -58,8 +58,8 @@ listar as vacinas referente aquele id.
 
 Perfil:
 
--Listar informações do usuário;     X
--Inserir imagem do usuário;         X
+-Listar informações do usuário;     parcialmente
+-Inserir imagem do usuário;         ok Julia
 -Implementar o esqueci minha senha; X
 
 ------------------------------------------------

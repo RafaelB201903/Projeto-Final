@@ -17,14 +17,13 @@
   <ion-card>
 
     <img src="assets/icon/lightpet-icon.png" alt="">
-  <h1>Estrela Petshop</h1>
+  <h1>{{petshop.nome}}</h1>
 
   <p><strong>Endereço:</strong> {{petshop.endereco}}</p>
-  <p><strong>Cidade:</strong>  Rio de Janeiro</p>
-  <p><strong>Bairro:</strong> Campo Grandre</p>
-  <p><strong>Telefone:</strong> 21 91234-2134</p>
-  <p><strong>E-mail: </strong> estrelapet@gmail.com</p>
-  <p><strong>CNPJ:</strong> 00.000.000/0000 </p>
+  <p><strong>Cidade:</strong>  {{petshop.cidade}}</p>
+  <p><strong>Bairro:</strong> {{petshop.bairro}}</p>
+  <p><strong>Telefone:</strong> {{petshop.telefone}}</p>
+  <p><strong>CNPJ:</strong> {{petshop.cpf}} </p>
  
   
   
@@ -47,28 +46,28 @@
 
         <ion-row>
           <ion-col col-6>
-            <div>1° Serviço</div>
+            <div>{{petshop.servico1}}</div>
           </ion-col>
           <ion-col col-6>
-            <div>---</div>
-          </ion-col>
-        </ion-row>
-    
-        <ion-row>
-          <ion-col col-6>
-            <div>2° Serviço:</div>
-          </ion-col>
-          <ion-col col-6>
-            <div>---</div>
+            <div>{{petshop.preco1}}</div>
           </ion-col>
         </ion-row>
     
         <ion-row>
           <ion-col col-6>
-            <div>3° Serviço:</div>
+            <div>{{petshop.servico2}}</div>
           </ion-col>
           <ion-col col-6>
-            <div>---</div>
+            <div>{{petshop.preco2}}</div>
+          </ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col col-6>
+            <div>{{petshop.servico3}}</div>
+          </ion-col>
+          <ion-col col-6>
+            <div>{{petshop.preco3}}</div>
           </ion-col>
         </ion-row>
     

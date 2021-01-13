@@ -3,6 +3,7 @@ import { TemplateService } from './../services/template.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-add-info-pet',
@@ -17,7 +18,8 @@ export class AddInfoPetPage implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
     private petServ: PetService,
-    private auth : AngularFireAuth) 
+    private auth : AngularFireAuth,
+    private navCtrl : NavController) 
     {
       
       this.auth.currentUser.then(response=>{
@@ -67,7 +69,7 @@ export class AddInfoPetPage implements OnInit {
         this.template.myAlert(response);//response lá do service
         //
 
-        
+        this.navCtrl.navigateBack(['/gerenciar-pets'])
       },erro => {
         console.log("Erro")
 

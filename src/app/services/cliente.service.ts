@@ -36,6 +36,24 @@ export class ClienteService {
         }))
     }
 
+    //vai puxar as informações do cliente especifico
+    clientesPorId(id): Observable<any> {
+
+      
+        return from(new Observable(observe => { 
+
+            this.firestore.collection('perfil-cliente').doc(id).snapshotChanges().subscribe(response => {
+                
+                let cliente: Cliente = new Cliente();
+                cliente.setData(response.payload.data())
+                console.log("id" +id);
+                console.log(response.payload.data());
+                observe.next(cliente);
+            })
+
+        }))
+    }
+
 
     buscaPorNome(nome: string): Observable<any> {
 
