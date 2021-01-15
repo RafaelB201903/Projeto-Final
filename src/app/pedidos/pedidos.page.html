@@ -12,9 +12,9 @@
 </ion-header>
 <ion-content>
 
-  <ion-card [routerLink]="['/ver-mais-pedidos']">
+  <ion-card (click)="visualizar()" *ngFor="let pedido of lista">
 
-    
+    {{pedido.id}}
 
     <ion-row class="no-padding mg-top-20">
       
@@ -24,11 +24,11 @@
   
       <ion-col col-3>
         <ul style="list-style: none;">
-          <h3>Belinha</h3>
-          <li><strong>Dono:</strong> Toddy</li>
-          <li><strong>Serviço(s):</strong> Banho</li>
-          <li><strong>Especie:</strong> Cachorro</li>
-          <li id="status"><strong>STATUS:</strong> <strong id="andamento"> EM ANDAMENTO</strong></li>
+          <h3>{{pedido.pet}}</h3>
+          <li><strong>Dono:</strong> </li>
+          <li><strong>Serviço(s):</strong> {{pedido.servico}}</li>
+          <li><strong>Especie:</strong> </li>
+          <li id="status"><strong>STATUS:</strong> <strong id="andamento"></strong></li>
         </ul>
       </ion-col>
 
@@ -36,7 +36,7 @@
 
   </ion-card>
 
-  <ion-card [routerLink]="['/ver-mais-pedidos']">
+  <!--<ion-card [routerLink]="['/ver-mais-pedidos']">
 
     
 
@@ -58,7 +58,7 @@
 
     </ion-row>
 
-  </ion-card>
+  </ion-card>-->
 
 
   <ion-button id="last-button" expand="block" shape="round" >Ver mais</ion-button>

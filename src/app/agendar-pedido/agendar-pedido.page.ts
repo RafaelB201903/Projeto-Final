@@ -15,6 +15,11 @@ export class AgendarPedidoPage implements OnInit {
   formGroup: FormGroup;
   idpetshop: string ="";
   idcliente: string ="";
+  status: string = "novo";
+
+
+  horario_coleta :string = "";
+  horario_entrega : string = "";
 
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
@@ -51,10 +56,13 @@ export class AgendarPedidoPage implements OnInit {
       // campos que preciso no cadastro, id gerado de forma automatica
       idcliente: [this.idcliente],
       idpetshop: [this.idpetshop],
+      status: [this.status],
       servico:[],
       pet:[],
-      data:[],
-      horario:[],
+      data_sugerido:[],
+      horario_sugerido:[],
+      horario_coleta : [this.horario_coleta],
+      horario_entrega: [this.horario_entrega],
      
     })//NAO ESTOU FAZENDO VALIDAÇÃO OU SEJA SE ESQUECERMOS UM 
     //REGISTRO ELE N DARÁ ERRO (O FIREBASE)

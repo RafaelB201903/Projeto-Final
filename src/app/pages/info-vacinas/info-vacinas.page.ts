@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Vacina } from 'src/app/model/vacina';
 import { ActivatedRoute } from '@angular/router';
-import { Pet } from 'src/app/model/pet';
+
 
 @Component({
   selector: 'app-info-vacinas',

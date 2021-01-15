@@ -7,6 +7,8 @@ Localizar petshop:
 -enviando id;   ok
 -Listar info ver-mais-petshop;  ok (13/01/2021) (RAFAEL)
 -Implementar o pedido;          parcialmente (13/01/2021)
+*enviar o id do pet (para obter as informações no petshop)
+
 
 (Menos do ver-mais para o agendar que ainda está dando erro)
 
@@ -59,7 +61,7 @@ listar as vacinas referente aquele id.
 Perfil:
 
 -Listar informações do usuário;     parcialmente
--Inserir imagem do usuário;         ok Julia
+-Inserir imagem do usuário;         ok Julia (09/01/2021)
 -Implementar o esqueci minha senha; X
 
 ------------------------------------------------
@@ -96,4 +98,33 @@ NOTA: Estou tentando fazer com que as páginas perfil e ver-mais-petshop puxem d
 informações, porém estou tendo dificuldades para puxar as informações através do doc (id).
 
 
- 
+
+
+-------------------------------------------------------------------------------------------------
+ 15/01/2021--- Relatorio 
+
+agendar-pedido:
+-Possibilidade de escolher o pet e o serviço na hora de agendar;    X
+
+ver-mais-petshop:
+-botão agendar com problema para ir para a página de agendar;   X
+
+pedidos:
+-Fazer enviar o id para a página ver-mais-pedidos;      X
+
+
+-------------------------------------PETSHOP APP------------------------------------
+
+pedidos-novos:
+-Colocar as informações do dono e do pet no listar;     X
+-Listar no petshop os pedidos através do id do petshop e do status; X
+
+Confirmar-pedido:
+-Finalizar a alteração do pedido;                       X
+
+ver-mais-pedido-novo:
+-Concertar o erro do botão "confirmar";                 X
+
+
+
+

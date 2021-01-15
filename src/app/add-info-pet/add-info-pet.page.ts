@@ -14,6 +14,7 @@ export class AddInfoPetPage implements OnInit {
 
   formGroup: FormGroup;
   idcliente: string ="";
+ 
 
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
@@ -40,6 +41,7 @@ export class AddInfoPetPage implements OnInit {
       //aqui dentr vou colocar os campos do formulario
       // campos que preciso no cadastro, id gerado de forma automatica
       idcliente: [this.idcliente],
+     
       nomedopet: [],
       raca: [],
       especie: [],
