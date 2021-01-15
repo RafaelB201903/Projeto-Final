@@ -29,24 +29,8 @@ export class PerfilPage implements OnInit {
                   this.id=response.uid;
                   
                   console.log(this.id)
-                  
-                  /*this.petService.listaDePets(response.uid).subscribe(response => {
-                    //this.clienteServ.listaDeClientes() -> chamei a lista de clientes 
-                    //o ListaDeClientes é um OBSERVABLE dessa forma retorna um subscribe
-                    //Esse é o comando que irá aguardar a resposta do servidor
-              
-                    //se o servidor responder ele fazer isso aqui
-                    console.log(response);//isso serve para ver se o problema é aqui, se houver algum erro aparecera aq
-                    //solicitando uma resposta do servidor
-                    this.lista = response;
-                    console.log(this.lista);
-              
-                    
-                  }, err=> {
-                  //o lista de cliente retorna observable 
-                  })*/
-                
 
+                
                 this.ClienteService.clientesPorId(this.id).subscribe(response => {
 
           
