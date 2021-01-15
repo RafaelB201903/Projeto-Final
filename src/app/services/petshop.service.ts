@@ -2,13 +2,15 @@ import { Petshop } from '../model/petshop';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable, from } from 'rxjs';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Injectable()
 
 export class PetshopService {
     petshop: Petshop = new Petshop();
 
-    constructor(private firestore: AngularFirestore) {
+    constructor(private firestore: AngularFirestore,
+        public storage: AngularFireStorage) {
 
     }
 
@@ -28,7 +30,18 @@ export class PetshopService {
                     let petshop: Petshop = new Petshop();
                     petshop.setData(obj.payload.doc.data());// obj.payload.doc.data() -> Dados do cliente
                     petshop.id = obj.payload.doc.id; // inserindo ID
-                    lista.push(petshop); // adicionando o cliente na lista // push é adicionar
+                    this.storage.storage.ref().child(`addimagem/${obj.payload.doc.id}.jpg`).getDownloadURL().then(response=>{
+                        petshop.imagem = response;
+                        
+                        lista.push(petshop); // adicionando o cliente na lista // push é adicionar
+                      }).catch(response=>{
+                        this.storage.storage.ref().child(`addimagem/perfil2.jpg`).getDownloadURL().then(response=>{
+                          petshop.imagem = response;
+                          
+                          lista.push(petshop); // adicionando o cliente na lista // push é adicionar
+                        })
+                      })
+                    
                 });
                 observe.next(lista);
             })

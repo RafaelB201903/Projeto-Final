@@ -29,13 +29,9 @@ export class LocalizarPetshopsPage implements OnInit {
     })
 
     this.petshopService.listaDePetshops().subscribe(response => {
-
-      
-
       //this.clienteServ.listaDeClientes() -> chamei a lista de clientes 
       //o ListaDeClientes é um OBSERVABLE dessa forma retorna um subscribe
       //Esse é o comando que irá aguardar a resposta do servidor
-
       //se o servidor responder ele fazer isso aqui
       console.log(response);//isso serve para ver se o problema é aqui, se houver algum erro aparecera aq
       //solicitando uma resposta do servidor
