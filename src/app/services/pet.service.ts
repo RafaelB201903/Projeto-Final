@@ -112,4 +112,25 @@ export class PetService {
             })
         }));
     }
+
+    listaPorIdCliente(id: string): Observable<any> {
+
+        // Observable -> Aguardar resposta do servidor
+        return from(new Observable(observe => { // converter para Observable
+            this.firestore.collection('pet').ref.where("idcliente","==",id)
+                .get().then(response => {
+                    let lista: Pet[] = [];
+                    response.docs.map(obj => {
+                        // será repetido para cada registro, cada registro do Firestore se chama obj
+                        let pet: Pet = new Pet();
+                        pet.setData(obj.data());// obj.payload.doc.data() -> Dados do cliente
+                        pet.id = obj.id; // inserindo ID
+                        lista.push(pet); // adicionando o cliente na lista // push é adicionar
+                    });
+                    console.log(lista);
+                    observe.next(lista);
+                })
+
+        }))
+    }
 }

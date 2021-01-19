@@ -123,7 +123,7 @@ Confirmar-pedido:
 -Finalizar a alteração do pedido;                       X
 
 ver-mais-pedido-novo:
--Concertar o erro do botão "confirmar";                 X
+- o erro do botão "confirmar";                 X
 
 
 

@@ -14,10 +14,9 @@ import { ClienteService } from '../services/cliente.service';
 })
 export class AddImagemPage implements OnInit {
 
-  imagem: any; //armazenada a imagem
   idUser: any = "";
   formGroup: FormGroup;
-  addimagem: Cliente = new Cliente();
+  cliente: Cliente = new Cliente();
 
 
 
@@ -26,7 +25,7 @@ export class AddImagemPage implements OnInit {
     private auth: AngularFireAuth,
     private db: AngularFirestore,
     private loadingController: LoadingController,
-    public fireStorage: AngularFireStorage) {
+    public storage: AngularFireStorage) {
 
       this.iniciarForm();
       this.auth.authState.subscribe(response=>{
@@ -45,41 +44,42 @@ export class AddImagemPage implements OnInit {
 
   iniciarForm() {
     this.formGroup = this.formBuilder.group({
-      nome: [this.addimagem.nome],
-      cpf: [this.addimagem.cpf],
-      telefone: [this.addimagem.telefone],
-      complemento: [this.addimagem.complemento],
-      cep: [this.addimagem.cep],
-      cidade: [this.addimagem.cidade],
-      bairro: [this.addimagem.bairro],
-      endereco: [this.addimagem.endereco],
-      ncasa: [this.addimagem.ncasa]
+      nome: [this.cliente.nome],
+     
+      telefone: [this.cliente.telefone],
+      complemento: [this.cliente.complemento],
+      cep: [this.cliente.cep],
+      cidade: [this.cliente.cidade],
+      bairro: [this.cliente.bairro],
+      endereco: [this.cliente.endereco],
+      
+
     })
   }
-
   enviarArquivo(event){
     //Capturando a imagem atravás do input type file (html)
-    this.imagem = event.srcElement.files[0];
+    let img = event.srcElement.files[0];
     //Enviar para o Storage
-    this.uploadStorage();
-    }
-    
-    uploadStorage(){
-      //Enviar ao firebase
-      this.fireStorage.storage.ref().child(`addimagem/${this.idUser}.jpg`).put(this.imagem).then(response=>{
+    this.storage.storage.ref().child(`perfil_cliente/${this.idUser}.jpg`).put(img).then(response=>{
          
-        console.log("imagerm enviada com sucesso");
+        this.dowloadImage();
 
       });
-      
-      }
+    }
+    
+    
 
       dowloadImage(){
 
-        this.fireStorage.storage.ref().child(`addimagem/${this.idUser}.jpg`).getDownloadURL().then(response=>{
-          this.imagem = response;
+        this.storage.storage.ref().child(`perfil_cliente/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+          this.cliente.imagem = response;
+        }).catch(response=>{
+          this.storage.storage.ref().child(`perfil_cliente/perfil2.jpg`).getDownloadURL().then(response=>{
+            this.cliente.imagem = response;
+          })
         })
 
-      }
+     }
+
 
 }
