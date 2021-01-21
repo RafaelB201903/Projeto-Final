@@ -165,7 +165,7 @@ export class ClienteService {
             })
 
         }));
-    }
+    }//testes
 
     // Atualiza perfil, 
     atualizaPerfil(uid, dados) {
