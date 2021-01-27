@@ -3,6 +3,7 @@ import { PedidoService } from './../services/pedido.service';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Pedido } from '../model/pedido';
+import { Cliente } from '../model/cliente';
 
 @Component({
   selector: 'app-pedidos',
@@ -14,7 +15,13 @@ export class PedidosPage implements OnInit {
   lista : Pedido[] = [];
   id : string = "";
 
+  cliente: Cliente = new Cliente();
   idpedido: string ="";
+  pedido : Pedido = new Pedido();
+  idcliente: string ="";
+  id2: string = "";
+  idpet: string = "";
+  id3: string = "";
 
   constructor(private auth : AngularFireAuth,
     private pedidoService : PedidoService,
