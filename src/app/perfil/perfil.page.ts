@@ -5,6 +5,8 @@ import { Cliente } from '../model/cliente';
 import { NavController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Pet } from '../model/pet';
+import { FormGroup } from '@angular/forms';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-perfil',
@@ -16,14 +18,17 @@ export class PerfilPage implements OnInit {
   cliente: Cliente = new Cliente();
   id : string = "";
   idcliente: string ="";
+  idUser: any = "";
+  formGroup: FormGroup;
 
   lista : Pet[] = [];
   
 
   constructor(private ClienteService : ClienteService,
-              private navCtrl : NavController,
+                 private navCtrl : NavController,
               private auth : AngularFireAuth,
-              private petService : PetService
+              private petService : PetService,
+              public storage: AngularFireStorage
               ) { 
                 this.auth.currentUser.then(response=>{
                   this.id=response.uid;
@@ -34,7 +39,8 @@ export class PerfilPage implements OnInit {
                 this.ClienteService.clientesPorId(this.id).subscribe(response => {
 
           
-                this.cliente.setData(response);
+                  this.cliente.setData(response);
+                  this.dowloadImage();
 
                   
               
@@ -54,6 +60,18 @@ export class PerfilPage implements OnInit {
     
    
   }
+
+  dowloadImage(){
+
+    this.storage.storage.ref().child(`addimagem/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+      this.cliente.imagem = response;
+    }).catch(response=>{
+      this.storage.storage.ref().child(`addimagem/perfil2.jpg`).getDownloadURL().then(response=>{
+        this.cliente.imagem = response;
+      })
+    })
+
+ }
 
   }
 
