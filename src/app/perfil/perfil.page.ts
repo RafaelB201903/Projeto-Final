@@ -34,7 +34,7 @@ export class PerfilPage implements OnInit {
                 this.ClienteService.clientesPorId(this.id).subscribe(response => {
 
           
-                  this.cliente.setData(response);
+                this.cliente.setData(response);
 
                   
               

@@ -46,11 +46,11 @@ export class PedidosPage implements OnInit {
   ngOnInit() {
   }
 
-  visualizar(pedido){
+  /*visualizar(pedido){
     //navigateFordward => para navegar pra frente, e n retornar
     //quero abrir essa pagina e quero enviar o cliente.id
     this.navCtrl.navigateForward(['/ver-mais-pedidos',pedido.id])
     console.log(pedido.id)
-  }
+  }*/
 
 }

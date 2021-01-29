@@ -79,6 +79,7 @@ export class AgendarPedidoPage implements OnInit {
       horario_sugerido:[],
       horario_coleta : [this.horario_coleta],
       horario_entrega: [this.horario_entrega],
+      nome_pet: []
      
     })//NAO ESTOU FAZENDO VALIDAÇÃO OU SEJA SE ESQUECERMOS UM 
     //REGISTRO ELE N DARÁ ERRO (O FIREBASE)

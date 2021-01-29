@@ -4,6 +4,7 @@ export class Pedido{
     pet: string;
     data_sugerido: string;
     horario_sugerido: string;
+    nome_pet: string;
    
     
 
@@ -13,6 +14,7 @@ export class Pedido{
         this.pet = objFirebase.pet;
         this.data_sugerido = objFirebase.data_sugerido;
         this.horario_sugerido = objFirebase.horario_sugerido;
+        this.nome_pet = objFirebase.nome_pet;
         
         
 

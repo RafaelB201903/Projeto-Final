@@ -127,4 +127,21 @@ ver-mais-pedido-novo:
 
 
 
+Relatorio 29/01/2021 ---------------------------------------------
 
+Cliente 
+
+PERFIL
+-ajeitar o nome no perfil;
+
+DICAS PET
+-colocar as imagens de volta;
+
+ADD INFO PET
+-colocar o input de data de nascimento como: type:date;
+
+ALT INFO PET
+-colocar o input de data de nascimento como: type:date;
+
+INFO VACINAS (alt-info-vacina)
+-consertar bug que exclui o pet;
