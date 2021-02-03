@@ -46,4 +46,11 @@ export class VerMaisPetshopPage implements OnInit {
   ngOnInit() {
   }
 
+  agendar(petshop){
+    //navigateFordward => para navegar pra frente, e n retornar
+    //quero abrir essa pagina e quero enviar o cliente.id
+    this.navCtrl.navigateForward(['/agendar-pedido',this.idpetshop])
+    console.log(petshop.id)
+  }
+
 }

@@ -1,3 +1,4 @@
+import { NavController } from '@ionic/angular';
 import { PetshopService } from './../services/petshop.service';
 import { PetService } from 'src/app/services/pet.service';
 import { PedidoService } from './../services/pedido.service';
@@ -27,6 +28,7 @@ export class AgendarPedidoPage implements OnInit {
 
   horario_coleta :string = "";
   horario_entrega : string = "";
+  id : string = "";
 
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
@@ -34,15 +36,39 @@ export class AgendarPedidoPage implements OnInit {
     private auth : AngularFireAuth,
     private route: ActivatedRoute,
     private petservice : PetService,
-    private petshopservice : PetshopService) 
+    private petshopservice : PetshopService,
+    private navCtrl : NavController) 
     {
+
+      this.route.paramMap.subscribe(url=>{
+
+        this.id = url.get('id');
+         
+   
+         this.idpetshop = this.id;
+         console.log(this.idpetshop);
+       
+        
+         this.petshopservice.petshopsPorId(this.id).subscribe(response => {
+ 
+ 
+         this.petshop.setData(response);
+     
+           
+         }, err=> {
+         //o lista de cliente retorna observable 
+         })
+       })
       
       this.auth.currentUser.then(response=>{
         this.idcliente=response.uid;
         console.log(this.idcliente)
+        
         this.petservice.listaDePets(this.idcliente).subscribe(response=>{
           console.log(response);
           this.listaPet = response;
+
+
         })
 
         this.iniciarForm();
@@ -97,6 +123,7 @@ export class AgendarPedidoPage implements OnInit {
         ;//janelinha de carregamento
         this.template.myAlert(response);//response lá do service
         //
+        this.navCtrl.navigateBack(['/localizar-petshops'])
 
         
       },erro => {

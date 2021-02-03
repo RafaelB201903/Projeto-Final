@@ -10,6 +10,10 @@ ion-title {
     color:floralwhite;
 }
 
+ion-menu-button{
+    color:floralwhite;
+}
+
 ion-card-title {
     text-align: center;
 }
@@ -38,7 +42,7 @@ img {
 ion-searchbar {
     --box-shadow: none;
     --border-radius: 12px;
-    margin-right: 10px;
+    //margin-right: 10px;
   }
 
 ul {
@@ -54,4 +58,6 @@ ul {
       color: #000000;
   }
 
-  
+ 
+
+

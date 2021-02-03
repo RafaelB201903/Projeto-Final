@@ -23,7 +23,7 @@
   <p><strong>Cidade:</strong>  {{petshop.cidade}}</p>
   <p><strong>Bairro:</strong> {{petshop.bairro}}</p>
   <p><strong>Telefone:</strong> {{petshop.telefone}}</p>
-  <p><strong>CNPJ:</strong> {{petshop.cpf}} </p>
+  <p><strong>CNPJ:</strong> {{petshop.cnpj}} </p>
  
   
   
@@ -79,7 +79,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-button shape="round" expand="full" [routerLink]="['/agendar-pedido']" >Agendar</ion-button>
+  <ion-button shape="round" expand="full" (click)="agendar(idpetshop)">Agendar</ion-button>
 
 
 </ion-content>

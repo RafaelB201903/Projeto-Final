@@ -9,7 +9,7 @@ export class Petshop {
     endereco:string;
     ncomercio:string;
     complemento:string;
-    cep:string;
+    cnpj:string;
     servico1:string;
     preco1:string;
 
@@ -29,7 +29,7 @@ export class Petshop {
         this.bairro = objFirebase.bairro;
         this.endereco = objFirebase.endereco;
         this.ncomercio = objFirebase.ncomercio;
-        this.cep = objFirebase.cep;
+        this.cnpj = objFirebase.cnpj;
         this.servico1 = objFirebase.servico1;
         this.servico2 = objFirebase.servico2;
         this.servico3 = objFirebase.servico3;

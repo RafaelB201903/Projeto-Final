@@ -15,8 +15,8 @@
 <ion-content>
 
   <img src="assets/icon/lightpet-icon.png" alt="">
-  <h1>Estrela Petshop</h1>
-  <p>Rua das flores n°1785</p>
+  <h1>{{petshop.nome}}</h1>
+  <p>{{petshop.endereco}}</p>
 
   <ion-card>
     <ion-card-header>
@@ -39,16 +39,16 @@
     <ion-item>
       <ion-label>Serviço</ion-label>
       <ion-select formControlName="servico">
-        <ion-select-option value="banho">{{petshop.preco1}}</ion-select-option>
-        <ion-select-option value="tosa">Tosa</ion-select-option>
-        <ion-select-option value="banho e tosa">Banho e Tosa</ion-select-option>
+        <ion-select-option value="banho">{{petshop.servico1}}</ion-select-option>
+        <ion-select-option value="tosa">{{petshop.servico2}}</ion-select-option>
+        <ion-select-option value="banho e tosa">{{petshop.servico3}}</ion-select-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
           <ion-label>Pet</ion-label>
           <ion-select formControlName="pet" *ngFor="let pet of listaPet">
-            <ion-select-option value="{{pet.id}}">{{pet.nomedopet}}{{pet.id}}</ion-select-option>
+            <ion-select-option value="{{pet.id}}">{{pet.nomedopet}}</ion-select-option>
             
           </ion-select>
     </ion-item>

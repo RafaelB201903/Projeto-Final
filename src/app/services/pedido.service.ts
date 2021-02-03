@@ -50,6 +50,23 @@ export class PedidoService {
         }))
     }
 
+    buscaPorId(id: any): Observable<any> {
+        return from(new Observable(observe => {
+            // .doc(id).snapshotChanges() -> Busca pelo id do documento
+            this.firestore.collection('pedido').doc(id).snapshotChanges().subscribe(response => {
+                console.log(response);
+                let pedido: Pedido = new Pedido();
+                pedido.id = response.payload.id;
+                pedido.setData(response.payload.data());
+                observe.next(pedido);
+
+            }, (err) => {
+                observe.error("Erro ao buscar o ID!");
+            })
+
+        }));
+    }
+
    
 
 }

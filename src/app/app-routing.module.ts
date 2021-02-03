@@ -84,7 +84,7 @@ const routes: Routes = [
     canActivate : [AngularFireAuthGuard],data : {authGuardPipe : redirectToLogin}
   },
   {
-    path: 'ver-mais-pedidos',
+    path: 'ver-mais-pedidos/:id',
     loadChildren: () => import('./ver-mais-pedidos/ver-mais-pedidos.module').then( m => m.VerMaisPedidosPageModule),
     canActivate : [AngularFireAuthGuard],data : {authGuardPipe : redirectToLogin}
   },

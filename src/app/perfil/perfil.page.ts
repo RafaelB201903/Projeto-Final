@@ -22,32 +22,49 @@ export class PerfilPage implements OnInit {
   formGroup: FormGroup;
 
   lista : Pet[] = [];
+
+  idpet: string = "";
   
 
   constructor(private ClienteService : ClienteService,
                  private navCtrl : NavController,
               private auth : AngularFireAuth,
               private petService : PetService,
-              public storage: AngularFireStorage
+              public storage: AngularFireStorage,
+              private petservice : PetService,
+              
               ) { 
                 this.auth.currentUser.then(response=>{
                   this.id=response.uid;
                   
                   console.log(this.id)
 
-                
+                //mostrar informações do cliente na tela
                 this.ClienteService.clientesPorId(this.id).subscribe(response => {
 
           
                   this.cliente.setData(response);
                   this.dowloadImage();
 
-                  
-              
                     
                   }, err=> {
-                  //o lista de cliente retorna observable 
+                 
                   })
+
+                  //mostrar informações do pet na tela (números de pets)
+                  this.petService.listaDePets(response.uid).subscribe(response => {
+
+          
+                    console.log(response);//isso serve para ver se o problema é aqui, se houver algum erro aparecera aq
+                    //solicitando uma resposta do servidor
+                    this.lista = response;
+                    console.log(this.lista);
+                    
+  
+                      
+                    }, err=> {
+                    //o lista de cliente retorna observable 
+                    })
                 })
 
                

@@ -88,4 +88,27 @@ export class PetshopService {
 
         }))
     }
+
+    //criei para listar informações no ver-mais-pedido
+    petshopsPorIdVerMaisPedido(idpetshop): Observable<any> {
+
+        // Observable -> Aguardar resposta do servidor
+        return from(new Observable(observe => { // converter para Observable
+
+            // this.firestore.collection('cliente') -> Selecionar a coleção no Firestore
+            // .snapshotChanges().subscribe -> Tentar buscar no servidor
+            // response -> dados baixados do servidor, os clientes
+            this.firestore.collection('perfil-petshop').doc(idpetshop).snapshotChanges().subscribe(response => {
+                // transformar response em array de clientes
+                let petshop: Petshop = new Petshop();
+                petshop.setData(response.payload.data())
+                console.log("id" +idpetshop);
+                console.log(response.payload.data());
+                observe.next(petshop);
+            })
+
+        }))
+    }
+
+   
 }

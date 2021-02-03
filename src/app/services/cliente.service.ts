@@ -108,7 +108,7 @@ export class ClienteService {
     buscaPorId(id: any): Observable<any> {
         return from(new Observable(observe => {
             // .doc(id).snapshotChanges() -> Busca pelo id do documento
-            this.firestore.collection('cliente').doc(id).snapshotChanges().subscribe(response => {
+            this.firestore.collection('perfil-cliente').doc(id).snapshotChanges().subscribe(response => {
                 console.log(response);
                 let cliente: Cliente = new Cliente();
                 cliente.id = response.payload.id;

@@ -104,13 +104,13 @@ informações, porém estou tendo dificuldades para puxar as informações atrav
  15/01/2021 --- Relatorio 
 
 agendar-pedido:
--Possibilidade de escolher o pet e o serviço na hora de agendar;    X
+-Possibilidade de escolher o pet e o serviço na hora de agendar;    ok
 
 ver-mais-petshop:
--botão agendar com problema para ir para a página de agendar;   X
+-botão agendar com problema para ir para a página de agendar;   ok
 
 pedidos:
--Fazer enviar o id para a página ver-mais-pedidos;      X
+-Fazer enviar o id para a página ver-mais-pedidos;      ok 
 
 
 -------------------------------------PETSHOP APP------------------------------------
@@ -131,17 +131,51 @@ Relatorio 29/01/2021 ---------------------------------------------
 
 Cliente 
 
+PEDIDO
+-listar informações do cliente; ok 29/01/2021 RAFAEL
+-colocar informações na tela; 30/01/2021 RAFAEL
+-enviar o id para o ver-mais-pedidos; ok 29/01/2021 RAFAEL
+-ajeitar o layout do card; ok 29/01/2021 RAFAEL
+-COLOCAR PARA PEGAR O NOME DO PET AO FAZER O PEDIDO; 
+
+VER-MAIS-PETSHOP
+-Listar as informações do pet; ok 30/01/2021 RAFAEL
+-Listar as informações do pedido; parcialmente (falta puxar o valor) ok 30/01/2021 RAFAEL
+-Listar as informações do petshop ; ok 30/01/2021 RAFAEL
+
+
+VER-MAIS-PEDIDO
+-enviar id na url; ok 29/01/2021 RAFAEL
+-listar as informações; 
+
 PERFIL
--ajeitar o nome no perfil;
+-ajeitar o nome no perfil; ok 29/01/2021 RAFAEL
+-trocar o texto alterar logo para alterar foto; ok 29/01/2021 RAFAEL
+-tirar o backbutton; ok 29/01/2021 RAFAEL
 
 DICAS PET
 -colocar as imagens de volta;
 
 ADD INFO PET
--colocar o input de data de nascimento como: type:date;
+-colocar o input de data de nascimento como: type:date;  ok 29/01/2021 RAFAEL
 
 ALT INFO PET
--colocar o input de data de nascimento como: type:date;
+-colocar o input de data de nascimento como: type:date; ok 29/01/2021 RAFAEL
 
 INFO VACINAS (alt-info-vacina)
--consertar bug que exclui o pet;
+-consertar bug que exclui o pet; 
+//o bug está por conta que n está sendo enviado o id, e n consegui resolver
+
+LOCALIZAR PETSHOP
+-(Ajeitar o search bar) ok 29/01/2021 RAFAEL
+-colocar ion-button-menu; ok 31/01/2021 RAFAEL
+
+AGENDAR-PEDIDO
+-Colocar o nome do petshop e o endereço; ok 29/01/2021 RAFAEL
+-Tirar o input de serviço que está escrito 60 e colocar o referente ao serviço; ok 29/01/2021 RAFAEL
+-verificar o bug das duas setinhas no pet;
+-ao finalizar o pedido retornar para a pagina localizar petshop; ok 29/01/2021 RAFAEL
+
+VER-MAIS-PETSHOP
+-Consertar a listagem do cnpj; ok 29/01/2021 RAFAEL
+-consertar o botão de agendar ; ok 30/01/2021 RAFAEL
