@@ -1,3 +1,4 @@
+import { ClienteService } from 'src/app/services/cliente.service';
 import { NavController } from '@ionic/angular';
 import { PetshopService } from './../services/petshop.service';
 import { PetService } from 'src/app/services/pet.service';
@@ -9,6 +10,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { ActivatedRoute } from '@angular/router';
 import { Pet } from '../model/pet';
 import { Petshop } from '../model/petshop';
+import { Cliente } from '../model/cliente';
 
 @Component({
   selector: 'app-agendar-pedido',
@@ -18,6 +20,7 @@ import { Petshop } from '../model/petshop';
 export class AgendarPedidoPage implements OnInit {
 
   petshop : Petshop = new Petshop();
+  cliente : Cliente = new Cliente();
   listaPet : Pet[] = [];
   formGroup: FormGroup;
   idpetshop: string ="";
@@ -30,6 +33,13 @@ export class AgendarPedidoPage implements OnInit {
   horario_entrega : string = "";
   id : string = "";
 
+  
+  endereco: string;
+  nome_cliente: string ;
+
+  
+  
+
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
     private pedidoServ: PedidoService,
@@ -37,7 +47,8 @@ export class AgendarPedidoPage implements OnInit {
     private route: ActivatedRoute,
     private petservice : PetService,
     private petshopservice : PetshopService,
-    private navCtrl : NavController) 
+    private navCtrl : NavController,
+    private clienteservice : ClienteService)
     {
 
       this.route.paramMap.subscribe(url=>{
@@ -54,6 +65,7 @@ export class AgendarPedidoPage implements OnInit {
  
          this.petshop.setData(response);
      
+         
            
          }, err=> {
          //o lista de cliente retorna observable 
@@ -68,8 +80,27 @@ export class AgendarPedidoPage implements OnInit {
           console.log(response);
           this.listaPet = response;
 
+          
+
 
         })
+
+        this.clienteservice.buscaPorId(this.idcliente).subscribe(response=>{
+          
+
+
+          console.log(response);
+          this.cliente.setData(response);
+
+          this.endereco = response.endereco;
+          this.nome_cliente = response.nome_cliente;
+          console.log(this.endereco);
+          console.log(this.nome_cliente);
+        
+
+        })
+        
+        
 
         this.iniciarForm();
       })
@@ -87,9 +118,16 @@ export class AgendarPedidoPage implements OnInit {
         this.idpetshop = id;
         this.petshopservice.petshopsPorId(this.idpetshop).subscribe(response=>{
           this.petshop=response;
+
+          
+          
         })
+
+        
+       
       })
       this.iniciarForm();
+      
   }
 
   iniciarForm() {
@@ -105,7 +143,10 @@ export class AgendarPedidoPage implements OnInit {
       horario_sugerido:[],
       horario_coleta : [this.horario_coleta],
       horario_entrega: [this.horario_entrega],
-      nome_pet: []
+      nome_pet: [],
+      endereco: [this.endereco],
+      nome_cliente: [this.nome_cliente]
+      
      
     })//NAO ESTOU FAZENDO VALIDAÇÃO OU SEJA SE ESQUECERMOS UM 
     //REGISTRO ELE N DARÁ ERRO (O FIREBASE)
@@ -121,7 +162,7 @@ export class AgendarPedidoPage implements OnInit {
         console.log("Cadastrado com sucesso");
 
         ;//janelinha de carregamento
-        this.template.myAlert(response);//response lá do service
+        this.template.myAlert("Agendado com sucesso!");//response lá do service
         //
         this.navCtrl.navigateBack(['/localizar-petshops'])
 
@@ -130,7 +171,7 @@ export class AgendarPedidoPage implements OnInit {
         console.log("Erro")
 
       
-        this.template.myAlert("Erro ao Cadastrar");
+        this.template.myAlert("Erro ao Agendar");
       })
 
     

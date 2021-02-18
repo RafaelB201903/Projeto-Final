@@ -50,10 +50,10 @@ export class VacinaService {
         }));
     }
 
-    atualizarVacina(vacina: any): Observable<any> {
+    atualizarVacina(id: any,vacina: any): Observable<any> {
         return from(new Observable(observe => {
 
-            this.firestore.collection('vacina').doc(vacina.id).set(vacina).then(response => {
+            this.firestore.collection('vacina').doc(id).set(vacina).then(response => {
                 observe.next("Atualizado com sucesso!");
             }, (err) => {
                 observe.error("Erro ao atualizar!");

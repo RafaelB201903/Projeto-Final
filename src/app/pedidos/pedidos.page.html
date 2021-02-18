@@ -1,11 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title >Pedidos</ion-title>
-    <ion-buttons slot="start" style="color:floralwhite">
-      <ion-button [routerLink]="['/localizar-petshops']" >
-        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-      </ion-button>
-    </ion-buttons > 
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     
     
   </ion-toolbar>
@@ -48,10 +46,11 @@
   
       <ion-col col-3>
         <ul style="list-style: none;">
-          <h3>AAAAAAAAAAAAAA</h3>
+          
           <li><ion-icon name="person-outline"></ion-icon> {{cliente.nome}}</li>
-          <li><ion-icon name="paw-outline"></ion-icon> Banho</li>
-         
+          <li><ion-icon name="paw-outline"></ion-icon> {{pedido.servico}}</li>
+          <li><ion-icon name="location-outline"></ion-icon>{{cliente.cidade}}</li>
+          
           <li id="status"><strong>STATUS:</strong> {{pedido.status}}</li>
         </ul>
       </ion-col>

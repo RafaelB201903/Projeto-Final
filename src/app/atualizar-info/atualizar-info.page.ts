@@ -1,3 +1,5 @@
+import { NavController } from '@ionic/angular';
+import { TemplateService } from 'src/app/services/template.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Cliente } from '../model/cliente';
@@ -16,7 +18,9 @@ export class AtualizarInfoPage implements OnInit {
   
   constructor(private formBuilder : FormBuilder, 
     private clienteServ : ClienteService,
-    private auth : AngularFireAuth) { // AngularFireAuth -> pegar dados do usuario logado
+    private auth : AngularFireAuth,
+    private template : TemplateService,
+    private navCtrl : NavController) { // AngularFireAuth -> pegar dados do usuario logado
     
       this.iniciarForm(); // obrigatório inicializar o formulário
     
@@ -59,15 +63,24 @@ export class AtualizarInfoPage implements OnInit {
   }
 
   atualizar(){
+    this.template.loading.then(load=>{
+      load.present();
     
-    this.auth.currentUser.then(response=>{ // auth.currentUser -> Obten dados do usuario
-      // envio uid -> idUsuário
-      // this.formGroup.value -> Dados preenchidos nos campos
+    this.auth.currentUser.then(response=>{ 
+ 
       this.clienteServ.atualizaPerfil(response.uid,this.formGroup.value).subscribe(response=>{
         console.log(response);
         console.log(this.formGroup.value)
+
+        this.template.myAlert("Alteração feita com sucesso!");
+        load.dismiss()
+      }, erro => {
+
+        this.template.myAlert("Erro ao alterar!");
+        load.dismiss()
       })
     })
+  })
   }
 
 }

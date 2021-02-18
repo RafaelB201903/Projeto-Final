@@ -70,7 +70,7 @@ export class AddInfoVacinasPage implements OnInit {
         console.log("Cadastrado com sucesso");
 
         ;//janelinha de carregamento
-        this.template.myAlert(response);//response lá do service
+        this.template.myAlert("Vacina adicionada com sucesso!");//response lá do service
         //
     
         this.navCtrl.navigateBack(['/info-vacinas',this.idpet])
@@ -79,7 +79,7 @@ export class AddInfoVacinasPage implements OnInit {
         console.log("Erro")
 
       
-        this.template.myAlert("Erro ao Cadastrar");
+        this.template.myAlert("Erro ao adicionar vacina");
       })
 
     

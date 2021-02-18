@@ -57,8 +57,8 @@ export class PedidosPage implements OnInit {
    
         this.lista = response;
         
-        this.idpet = response;
-        console.log(this.idpet + " ID PET")
+        //this.idpet = response;
+        //console.log(this.idpet + " ID PET")
 
         this.pet.setData(response);
         
@@ -67,7 +67,7 @@ export class PedidosPage implements OnInit {
       })
 
       
-      //colocar as informações do pet no card
+      /*colocar as informações do pet no card
       this.PetService.buscaPorId(this.id).subscribe(response => {
 
 
@@ -77,7 +77,7 @@ export class PedidosPage implements OnInit {
           
         }, err=> {
         //o lista de cliente retorna observable 
-        })
+        })*/
        
 
     })

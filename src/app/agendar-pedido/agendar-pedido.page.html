@@ -47,8 +47,8 @@
 
     <ion-item>
           <ion-label>Pet</ion-label>
-          <ion-select formControlName="pet" *ngFor="let pet of listaPet">
-            <ion-select-option value="{{pet.id}}">{{pet.nomedopet}}</ion-select-option>
+          <ion-select formControlName="pet" >
+            <ion-select-option *ngFor="let pet of listaPet" value="{{pet.id}}">{{pet.nomedopet}}</ion-select-option>
             
           </ion-select>
     </ion-item>

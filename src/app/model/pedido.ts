@@ -7,7 +7,8 @@ export class Pedido{
     nome_pet: string;
     status: string;
     idpetshop: string;
-    
+    endereco: string;
+    nome_cliente:string;
 
     setData(objFirebase : any){
 
@@ -18,7 +19,7 @@ export class Pedido{
         this.nome_pet = objFirebase.nome_pet;
         this.status = objFirebase.status;
         this.idpetshop = objFirebase.idpetshop;
-        
-
+        this.endereco = objFirebase.endereco;
+        this.nome_cliente = objFirebase.nome_cliente;
     }
 }

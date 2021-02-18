@@ -64,15 +64,15 @@ export class AltInfoPetPage implements OnInit {
         console.log("Atualizado com sucesso");
 
         load.dismiss();//janelinha de carregamento
-        this.template.myAlert(response);//response lá do service
+        this.template.myAlert("Alteração feita com sucesso!");//response lá do service
         //
-
+        this.navCtrl.back();
         
       },erro => {
         console.log("Erro")
 
         load.dismiss();
-        this.template.myAlert("Erro ao Atualizar");
+        this.template.myAlert("Erro ao Alterar");
       })
 
     })

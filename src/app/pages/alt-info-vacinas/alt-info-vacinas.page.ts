@@ -35,6 +35,7 @@ export class AltInfoVacinasPage implements OnInit {
      this.vacinaService.buscaPorId(id).subscribe(response=>{
        this.vacina = response;//acoma ele busca info por id
        console.log(this.vacina);
+       this.vacina.id = id;
        this.iniciarForm();
        //inicio o form com as info nos inputs
      })
@@ -44,20 +45,20 @@ export class AltInfoVacinasPage implements OnInit {
   }
 
   atualizar(){
-    this.vacinaService.atualizarVacina(this.formGroup.value).subscribe(response => {
+    this.vacinaService.atualizarVacina(this.vacina.id,this.formGroup.value).subscribe(response => {
         
       console.log("Atualizado com sucesso");
 
       ;//janelinha de carregamento
-      this.template.myAlert(response);//response lá do service
+      this.template.myAlert("Alteração feita com sucesso!");//response lá do service
       //
-      this.navCtrl.navigateBack(['/info-vacinas',this.idpet])
+      this.navCtrl.back();
       
     },erro => {
       console.log("Erro")
 
     
-      this.template.myAlert("Erro ao Cadastrar");
+      this.template.myAlert("Erro ao alterar informação");
     })
 
 
@@ -66,7 +67,7 @@ export class AltInfoVacinasPage implements OnInit {
   iniciarForm() {//os dados vão chegar do banco aqui
     this.formGroup = this.formBuilder.group({
 
-      id: [this.vacina.id],
+      idpet: [this.vacina.idpet],
       medicamento: [this.vacina.medicamento],
       data: [this.vacina.data],
       proximadose: [this.vacina.proximadose],

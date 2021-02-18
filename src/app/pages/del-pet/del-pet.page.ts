@@ -55,7 +55,7 @@ export class DelPetPage implements OnInit {
       this.PetService.excluir(this.pet).subscribe(response => {
 
 
-
+        this.template.myAlert("Pet excluido com sucesso!");
         load.dismiss();//janelinha de carregamento
 
         //fecha janelinha

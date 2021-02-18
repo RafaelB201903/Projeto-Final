@@ -58,12 +58,12 @@ export class DelVacinaPage implements OnInit {
       this.VacinaService.excluirVacina(this.vacina).subscribe(response => {
 
 
-
+        this.template.myAlert("Vacina excluida com sucesso!");
         load.dismiss();//janelinha de carregamento
 
         //fecha janelinha
 
-        this.navCtrl.navigateBack(['/info-vacinas',this.idpet]);
+        this.navCtrl.back(); 
       }, erro => {
 
 

@@ -28,7 +28,7 @@
   
       <ion-row>
         <ion-col>
-          <div id="info"><ion-input  >{{vacina.medicamento}}</ion-input> </div>
+          <div id="info"><ion-input disabled type="text" >{{vacina.medicamento}}</ion-input> </div>
         </ion-col>
         
         
@@ -48,10 +48,10 @@
         <ion-row>
 
           <ion-col>
-          <div id="info"><ion-input >{{vacina.proximadose}}</ion-input> </div>
+          <div id="info"><ion-input disabled type="text"  >{{vacina.proximadose}}</ion-input> </div>
         </ion-col>
         <ion-col>
-          <div id="info"><ion-input  >{{vacina.data}}</ion-input> </div>
+          <div id="info"><ion-input disabled type="text" >{{vacina.data}}</ion-input> </div>
         </ion-col>
           
         </ion-row>
@@ -75,6 +75,4 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
-
-</ion-content>
+  </ion-content>

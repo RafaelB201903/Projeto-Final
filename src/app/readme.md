@@ -154,7 +154,7 @@ PERFIL
 -tirar o backbutton; ok 29/01/2021 RAFAEL
 
 DICAS PET
--colocar as imagens de volta;
+-colocar as imagens de volta; ok 04/02/2021 
 
 ADD INFO PET
 -colocar o input de data de nascimento como: type:date;  ok 29/01/2021 RAFAEL
@@ -163,7 +163,7 @@ ALT INFO PET
 -colocar o input de data de nascimento como: type:date; ok 29/01/2021 RAFAEL
 
 INFO VACINAS (alt-info-vacina)
--consertar bug que exclui o pet; 
+-consertar bug que exclui a vacina; IMPORTANTE
 //o bug está por conta que n está sendo enviado o id, e n consegui resolver
 
 LOCALIZAR PETSHOP
@@ -173,9 +173,61 @@ LOCALIZAR PETSHOP
 AGENDAR-PEDIDO
 -Colocar o nome do petshop e o endereço; ok 29/01/2021 RAFAEL
 -Tirar o input de serviço que está escrito 60 e colocar o referente ao serviço; ok 29/01/2021 RAFAEL
--verificar o bug das duas setinhas no pet;
+-verificar o bug das duas setinhas no pet;  IMPORTANTE
 -ao finalizar o pedido retornar para a pagina localizar petshop; ok 29/01/2021 RAFAEL
 
 VER-MAIS-PETSHOP
 -Consertar a listagem do cnpj; ok 29/01/2021 RAFAEL
 -consertar o botão de agendar ; ok 30/01/2021 RAFAEL
+
+2° relatorio 10/02/2021 ----------------------------------------------
+
+TODAS AS PAGINAS 
+-Verificar se dar pra colocar as 3 barrinhas do menus nas paginas que n 
+possuem; 
+
+
+3° relatorio 17/02/2021 --------------------------------------------------------------
+
+TODAS AS PAGINAS 
+-Verificar se dar pra colocar as 3 barrinhas do menus nas paginas que n 
+possuem;  ok 17/02/2021 RAFAEL
+
+-Inserir uma mensagem para cada finalização de ação (agendar, adicionar pet, etc);
+*agendar-pedido; ok
+*add-info-pet; ok
+*alt-info-pet; ok
+*del-pet; ok
+*add-info-vacina; ok
+*alt-info-vacina; ok
+*del-info-vacina; ok
+*atualizar-info; ok
+
+
+PEDIDOS 
+
+-Ajustar o q irá colocar onde seria o nome;  ok
+
+INFO-VACINAS
+
+-Colocar as informações dos inputs centralizadas; ok 
+-Desativar o input de informação; ok 
+
+ALT-INFO-PET
+
+-Fazer retornar para pagina info-pet ao finalizar a alteração; ok 17/02/2021 RAFAEL
+
+PERFIL
+
+-Listar a quantidade de pets cadastrados e de pedidos;
+
+ATUALIZAR INFO
+
+-Campo 'complemento' não puxando a informação do banco; ok 17/02/2021 RAFAEL
+
+
+CADASTRAR-CLIENTE
+
+-Colocar a janelinha de confirmação; ok 18/02/2021
+
+-Enviar o cliente para a pagina de login ao finalizar cadastro; ok 18/02/2021

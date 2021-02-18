@@ -68,7 +68,7 @@ export class AddInfoPetPage implements OnInit {
         console.log("Cadastrado com sucesso");
 
         ;//janelinha de carregamento
-        this.template.myAlert(response);//response lá do service
+        this.template.myAlert("Pet adicionado com sucesso!");//response lá do service
         //
 
         this.navCtrl.navigateBack(['/gerenciar-pets'])
@@ -76,7 +76,7 @@ export class AddInfoPetPage implements OnInit {
         console.log("Erro")
 
       
-        this.template.myAlert("Erro ao Cadastrar");
+        this.template.myAlert("Erro ao adicionar o pet");
       })
 
     
