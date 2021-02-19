@@ -231,3 +231,25 @@ CADASTRAR-CLIENTE
 -Colocar a janelinha de confirmação; ok 18/02/2021
 
 -Enviar o cliente para a pagina de login ao finalizar cadastro; ok 18/02/2021
+
+
+
+RELATORIO 19/02/2021 ----------------------------------------------
+
+-Exclusão inesperada do pet ao sair da pagina; (alterar exclui) ok 19/02/2021
+
+ALT-INFO-PET
+
+-Ajeitar o numero de celular; ok 19/02/2021
+
+PERFIL
+
+-Ajustar o circulo do perfil; ok 19/02/2021 rafael
+
+-INICIAL-CLIENTE
+
+-Ajustar o card do login e senha para dispositivos pequenos;  ok 19/02/2021 rafael
+
+LOGIN-CLIENTE
+
+-Ajuste nos botões e logo; ok 19/02/2021 rafael

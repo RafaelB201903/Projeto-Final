@@ -1,5 +1,6 @@
 export class Pet{
     id: string;
+    idcliente: string;
     nomedopet: string;
     raca: string;
     especie: string;
@@ -27,7 +28,7 @@ export class Pet{
         this.estado = objFirebase.estado;  
         this.telefone = objFirebase.telefone;
         this.celular = objFirebase.celular;
-
+        this.idcliente = objFirebase.idcliente;
     }
 
 

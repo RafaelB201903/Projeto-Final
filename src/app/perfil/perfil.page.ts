@@ -27,7 +27,7 @@ export class PerfilPage implements OnInit {
   
 
   constructor(private ClienteService : ClienteService,
-                 private navCtrl : NavController,
+              private navCtrl : NavController,
               private auth : AngularFireAuth,
               private petService : PetService,
               public storage: AngularFireStorage,

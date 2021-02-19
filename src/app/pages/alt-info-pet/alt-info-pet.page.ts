@@ -83,6 +83,7 @@ export class AltInfoPetPage implements OnInit {
     this.formGroup = this.formBuilder.group({
       //aqui dentr vou colocar os campos do formulario
       // campos que preciso no cadastro, id gerado de forma automatica
+      idcliente: [this.pet.idcliente],
       id : [this.pet.id],
       nomedopet: [this.pet.nomedopet],
       raca: [this.pet.raca],
