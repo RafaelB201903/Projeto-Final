@@ -253,3 +253,85 @@ PERFIL
 LOGIN-CLIENTE
 
 -Ajuste nos botões e logo; ok 19/02/2021 rafael
+
+
+24/02/2021 -----------------------------------------------------------------------------
+
+consertar botão buscar; ok 24/02/2021 rafael
+
+trocar o placeholder do searchbar; ok 24/02/2021 rafael
+
+
+
+
+
+O que precisa ser finalizado ainda:
+
+1)listar com informações (petshop)     PRIORIDADE: MAXIMA  
+
+-Preciso que apareça o nome do pet, o nome do dono do pet,
+o endereço do dono do pet e a especie do animal (cão ou gato)
+nas listas (pedido novo, pedido em andamento e pedido finalizado)
+no app do petshop. Atualmente só está listando o
+serviço pois é o unico que consigo puxar do banco junto com o
+listar, na última tabs (pedidos finalizados) tem um exemplo
+de como deveria ficar (NÃO ESTÁ SENDO PUXADO DO BANCO ESSAS 
+INFORMAÇÕES, ESTÃO SENDO COLOCADA DIRETAMENTE NO HTML). Dessa 
+forma eu tentei implemetar no "AGENDAR-PEDIDO" (do cliente)
+uma forma de puxar essas informações, porém eu n tive êxito.
+
+
+2)mostrar no perfil                 PRIORIDADE: MEDIANA
+
+-Preciso listar no app do cliente e do petshop na página "perfil" 
+o numero de pets que o cliente cadastrou e o número de pedidos que 
+o mesmo efetuou, já no petshop preciso que apareça o numero 
+de pedidos aceitos e pedidos concluidos (essas informação irão
+ficar ao lado da imagem).
+
+
+3)menu com foto e nome              PRIORIDADE: MEDIANA
+
+-Perguntar ao Daniel se é possivel inserir foto e nome do usuário
+(puxando do banco) no menu do projeto, eu tentei fazer igual ao
+da página de perfil, copiei os códigos (correntUser e o buscar
+por id, porém ele deu um erro de uid que eu n consegui entender,
+aparentemente ele n conseguiu capturar o id pelo correntUser).
+
+
+4)Numero no tabs                    PRIORIDADE: PEQUENA
+
+-Verificar se é possivel implementar no tabs (onde fica um numero) 
+onde seja possivel aparecer os numero de acordo com a quantidade de
+pedidos novos.
+
+
+------------------------------------------------------------------
+			      JULIA
+
+4)
+
+-Julia você esqueceu de implementar a inserção de imagem nos pets,
+você pode colocar logo abaixo do cadastro do pet ,assim o cliente 
+irá optar por colocar imagem ou deixar default.
+
+5)
+
+-Julia preciso que você verifique se a imagem está sendo inserida
+no banco, se a imagem está sendo armazenada e se está sendo puxada
+pelo model e também consertar o erro q n está fazendo a imagem ir
+para o perfil. (nos dois projetos)
+
+
+GIT HUB para esqueci minha senha:
+https://github.com/igorrpp/Achei-Libras/blob/master/src/app/recuperar-senha/recuperar-senha.page.ts
+
+
+relatorio 24/02/2021 --------------------------------------------------------
+
+-Inserir imagem dentro do agendar-pedido; ok rafael 24/02/2021
+
+-Tentar colocar o nome do cliente no menu;
+
+-Alterar o menu;
+

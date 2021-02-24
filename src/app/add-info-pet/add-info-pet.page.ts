@@ -4,6 +4,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { NavController } from '@ionic/angular';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { Pet } from '../model/pet';
 
 @Component({
   selector: 'app-add-info-pet',
@@ -14,13 +16,17 @@ export class AddInfoPetPage implements OnInit {
 
   formGroup: FormGroup;
   idcliente: string ="";
+  idUser: any ="";
+
+  pet: Pet = new Pet();
  
 
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
     private petServ: PetService,
     private auth : AngularFireAuth,
-    private navCtrl : NavController) 
+    private navCtrl : NavController,
+    public storage: AngularFireStorage) 
     {
       
       this.auth.currentUser.then(response=>{
@@ -29,7 +35,7 @@ export class AddInfoPetPage implements OnInit {
         this.iniciarForm();
       })
       this.iniciarForm();
-
+      this.dowloadImage();
      }
 
   ngOnInit() {
@@ -81,5 +87,31 @@ export class AddInfoPetPage implements OnInit {
 
     
   }
+
+  enviarArquivo(event){
+    //Capturando a imagem atravás do input type file (html)
+    let img = event.srcElement.files[0];
+    //Enviar para o Storage
+    this.storage.storage.ref().child(`pet/${this.idUser}.jpg`).put(img).then(response=>{
+         
+        this.dowloadImage();
+
+      });
+    }
+    
+    
+
+      dowloadImage(){
+
+        this.storage.storage.ref().child(`pet/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+          this.pet.imagem = response;
+        }).catch(response=>{
+          this.storage.storage.ref().child(`pet/dog.png`).getDownloadURL().then(response=>{
+            this.pet.imagem = response;
+          })
+        })
+
+     }
+
 
 }

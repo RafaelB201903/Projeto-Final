@@ -30,7 +30,7 @@ export class GerenciarPetsPage implements OnInit {
           //solicitando uma resposta do servidor
           this.lista = response;
           console.log(this.lista);
-    
+          console.log(this.lista.length)
           
         }, err=> {
         //o lista de cliente retorna observable 

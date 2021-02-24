@@ -13,6 +13,7 @@ export class Pet{
     estado: string;
     telefone: string;
     celular: string;
+    imagem:string;
 
     setData(objFirebase : any){
 

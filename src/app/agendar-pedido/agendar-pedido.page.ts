@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Pet } from '../model/pet';
 import { Petshop } from '../model/petshop';
 import { Cliente } from '../model/cliente';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-agendar-pedido',
@@ -37,7 +38,7 @@ export class AgendarPedidoPage implements OnInit {
   endereco: string;
   nome_cliente: string ;
 
-  
+  idUser: any = "";
   
 
   constructor(private formBuilder: FormBuilder,
@@ -48,23 +49,24 @@ export class AgendarPedidoPage implements OnInit {
     private petservice : PetService,
     private petshopservice : PetshopService,
     private navCtrl : NavController,
-    private clienteservice : ClienteService)
+    private clienteservice : ClienteService,
+    public storage: AngularFireStorage,)
     {
 
       this.route.paramMap.subscribe(url=>{
 
         this.id = url.get('id');
          
-   
+         this.idUser = this.id;
          this.idpetshop = this.id;
-         console.log(this.idpetshop);
+         
        
         
          this.petshopservice.petshopsPorId(this.id).subscribe(response => {
  
  
          this.petshop.setData(response);
-     
+         this.dowloadImage()
          
            
          }, err=> {
@@ -74,10 +76,10 @@ export class AgendarPedidoPage implements OnInit {
       
       this.auth.currentUser.then(response=>{
         this.idcliente=response.uid;
-        console.log(this.idcliente)
+        
         
         this.petservice.listaDePets(this.idcliente).subscribe(response=>{
-          console.log(response);
+          
           this.listaPet = response;
 
           
@@ -89,20 +91,21 @@ export class AgendarPedidoPage implements OnInit {
           
 
 
-          console.log(response);
+        
           this.cliente.setData(response);
 
           this.endereco = response.endereco;
-          this.nome_cliente = response.nome_cliente;
+          this.nome_cliente = response.nome;
+          
           console.log(this.endereco);
           console.log(this.nome_cliente);
-        
+          this.iniciarForm()
 
         })
         
         
 
-        this.iniciarForm();
+       
       })
       this.iniciarForm();
 
@@ -147,6 +150,7 @@ export class AgendarPedidoPage implements OnInit {
       endereco: [this.endereco],
       nome_cliente: [this.nome_cliente]
       
+      
      
     })//NAO ESTOU FAZENDO VALIDAÇÃO OU SEJA SE ESQUECERMOS UM 
     //REGISTRO ELE N DARÁ ERRO (O FIREBASE)
@@ -177,18 +181,21 @@ export class AgendarPedidoPage implements OnInit {
     
   }
 
-  /*atualizar(){
-    
-    //ver dps no vídeo
-    this..then(response=>{ // auth.currentUser -> Obten dados do usuario
-      // envio uid -> idUsuário
-      // this.formGroup.value -> Dados preenchidos nos campos
-      this.clienteServ.atualizaPerfil(response.idpedido,this.formGroup.value).subscribe(response=>{
-        console.log(response);
-        console.log(this.formGroup.value)
+  dowloadImage(){
+
+    this.storage.storage.ref().child(`perfil_petshop/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+      this.petshop.imagem = response;
+      console.log("puxou do banco")
+      console.log(this.idUser);
+    }).catch(response=>{
+      this.storage.storage.ref().child(`perfil_petshop/petshop_perfil.jpg`).getDownloadURL().then(response=>{
+        this.petshop.imagem = response;
+        console.log("nao puxou do banco")
+       
       })
     })
-  }*/
+
+ }
 
 }
 

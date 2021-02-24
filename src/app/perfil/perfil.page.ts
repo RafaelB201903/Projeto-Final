@@ -1,3 +1,4 @@
+import { PedidoService } from './../services/pedido.service';
 import { PetService } from 'src/app/services/pet.service';
 import { ClienteService } from './../services/cliente.service';
 import { Component, OnInit } from '@angular/core';
@@ -7,6 +8,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Pet } from '../model/pet';
 import { FormGroup } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { Pedido } from '../model/pedido';
 
 @Component({
   selector: 'app-perfil',
@@ -15,13 +17,15 @@ import { AngularFireStorage } from '@angular/fire/storage';
 })
 export class PerfilPage implements OnInit {
 
+  pet: Pet = new Pet();
   cliente: Cliente = new Cliente();
   id : string = "";
   idcliente: string ="";
   idUser: any = "";
   formGroup: FormGroup;
 
-  lista : Pet[] = [];
+  lista1 : Pet[] = [];
+  lista : Pedido[] = [];
 
   idpet: string = "";
   
@@ -32,12 +36,33 @@ export class PerfilPage implements OnInit {
               private petService : PetService,
               public storage: AngularFireStorage,
               private petservice : PetService,
+              private pedidoService: PedidoService,
               
               ) { 
                 this.auth.currentUser.then(response=>{
                   this.id=response.uid;
-                  
+                  this.idUser =this.id;
                   console.log(this.id)
+
+                  //numero de pedidos
+                  this.pedidoService.listaDePedido(response.uid).subscribe(response => {
+      
+                    console.log(response);
+               
+                    this.lista1 = response;
+                 
+                  }, err=> {
+                
+                  })
+                  //numero de pets 
+                  this.petService.listaDePets(this.id).subscribe(response => {
+                  
+                    this.lista = response;
+                   
+  
+                  }, err=> {
+                 
+                  })
 
                 //mostrar informações do cliente na tela
                 this.ClienteService.clientesPorId(this.id).subscribe(response => {
@@ -45,6 +70,7 @@ export class PerfilPage implements OnInit {
           
                   this.cliente.setData(response);
                   this.dowloadImage();
+                  
 
                     
                   }, err=> {
@@ -55,10 +81,9 @@ export class PerfilPage implements OnInit {
                   this.petService.listaDePets(response.uid).subscribe(response => {
 
           
-                    console.log(response);//isso serve para ver se o problema é aqui, se houver algum erro aparecera aq
-                    //solicitando uma resposta do servidor
+                  
                     this.lista = response;
-                    console.log(this.lista);
+                    
                     
   
                       
@@ -80,11 +105,13 @@ export class PerfilPage implements OnInit {
 
   dowloadImage(){
 
-    this.storage.storage.ref().child(`addimagem/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+    this.storage.storage.ref().child(`perfil_cliente/${this.idUser}.jpg`).getDownloadURL().then(response=>{
       this.cliente.imagem = response;
+     
     }).catch(response=>{
-      this.storage.storage.ref().child(`addimagem/perfil2.jpg`).getDownloadURL().then(response=>{
+      this.storage.storage.ref().child(`perfil_cliente/cliente_perfil.jpg`).getDownloadURL().then(response=>{
         this.cliente.imagem = response;
+      
       })
     })
 

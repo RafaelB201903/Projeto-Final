@@ -46,8 +46,8 @@ export class ClienteService {
                 
                 let cliente: Cliente = new Cliente();
                 cliente.setData(response.payload.data())
-                console.log("id" +id);
-                console.log(response.payload.data());
+                //console.log("id" +id);
+                //console.log(response.payload.data());
                 observe.next(cliente);
             })
 

@@ -2,13 +2,15 @@ import { Pet } from './../model/pet';
 import { Injectable } from '@angular/core';
 import { Observable, from } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Injectable()
 
 export class PetService {
     pet: Pet = new Pet();
 
-    constructor(private firestore: AngularFirestore) {}
+    constructor(private firestore: AngularFirestore,
+        public storage: AngularFireStorage) {}
 
 
     listaDePets(id): Observable<any> {
@@ -25,10 +27,20 @@ export class PetService {
                 response.map(obj => {
                     // será repetido para cada registro, cada registro do Firestore se chama obj
                     let pet: Pet = new Pet();
-                    pet.setData(obj.payload.doc.data()); // obj.payload.doc.data() -> Dados do cliente
-                    console.log(obj.payload.doc.data())
+                    pet.setData(obj.payload.doc.data());// obj.payload.doc.data() -> Dados do cliente
                     pet.id = obj.payload.doc.id; // inserindo ID
-                    lista.push(pet); // adicionando o cliente na lista // push é adicionar
+                    this.storage.storage.ref().child(`pet/${obj.payload.doc.id}.jpg`).getDownloadURL().then(response=>{
+                        pet.imagem = response;
+                        
+                        lista.push(pet); // adicionando o cliente na lista // push é adicionar
+                      }).catch(response=>{
+                        this.storage.storage.ref().child(`pet/dog.png`).getDownloadURL().then(response=>{
+                            pet.imagem = response;
+                          
+                          lista.push(pet); // adicionando o cliente na lista // push é adicionar
+                        })
+                      })
+                    
                 });
                 observe.next(lista);
             })

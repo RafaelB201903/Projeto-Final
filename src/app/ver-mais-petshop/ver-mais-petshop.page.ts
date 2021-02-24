@@ -5,6 +5,7 @@ import { PetService } from '../services/pet.service';
 import { Petshop } from '../model/petshop';
 import { PetshopService } from '../services/petshop.service';
 import { ActivatedRoute } from '@angular/router';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-ver-mais-petshop',
@@ -16,16 +17,18 @@ export class VerMaisPetshopPage implements OnInit {
   petshop: Petshop = new Petshop();
   id : string = "";
   idpetshop: string ="";
+  idUser: any = "";
 
   constructor(private petshopService : PetshopService,
     private navCtrl : NavController,
     private auth : AngularFireAuth,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    public storage: AngularFireStorage) {
 
       this.route.paramMap.subscribe(url=>{
 
        this.id = url.get('id');
-        
+        this.idUser = this.id;
   
         this.idpetshop = this.id;
         console.log(this.idpetshop);
@@ -33,9 +36,10 @@ export class VerMaisPetshopPage implements OnInit {
        
         this.petshopService.petshopsPorId(this.id).subscribe(response => {
 
-
+        this.dowloadImage();
         this.petshop.setData(response);
-    
+        this.idUser = response.id;
+        console.log(this.idUser)
           
         }, err=> {
         //o lista de cliente retorna observable 
@@ -44,6 +48,7 @@ export class VerMaisPetshopPage implements OnInit {
 
     }
   ngOnInit() {
+   
   }
 
   agendar(petshop){
@@ -52,5 +57,21 @@ export class VerMaisPetshopPage implements OnInit {
     this.navCtrl.navigateForward(['/agendar-pedido',this.idpetshop])
     console.log(petshop.id)
   }
+
+  dowloadImage(){
+
+    this.storage.storage.ref().child(`perfil_petshop/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+      this.petshop.imagem = response;
+      console.log("puxou do banco")
+      console.log(this.idUser);
+    }).catch(response=>{
+      this.storage.storage.ref().child(`perfil_petshop/petshop_perfil.jpg`).getDownloadURL().then(response=>{
+        this.petshop.imagem = response;
+        console.log("nao puxou do banco")
+       
+      })
+    })
+
+ }
 
 }

@@ -1,17 +1,17 @@
-<ion-header class="ion-no-border">
+<ion-header>
   <ion-toolbar>
-    <ion-title>Adicionar Logo</ion-title>
+    <ion-title >Adicinar foto</ion-title>
     <ion-buttons slot="start" style="color:floralwhite">
-      <ion-button [routerLink]="['/perfil']" >
+      <ion-back-button>
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-      </ion-button>
+      </ion-back-button>
     </ion-buttons >
+    
   </ion-toolbar>
 </ion-header>
 
+<ion-content>
 
-  
-  <ion-content>
   <ion-card>
     <ion-card id="info">
 
@@ -22,7 +22,7 @@
 
 
      <ion-row>
-      <img src="{{cliente.imagem}}" alt="">
+      <img src="{{pet.imagem}}" alt="">
     </ion-row>
 
 <ion-item>
@@ -31,5 +31,5 @@
 
   
   </ion-card>
-  
+
 </ion-content>

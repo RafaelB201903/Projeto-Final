@@ -127,6 +127,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/del-pet/del-pet.module').then( m => m.DelPetPageModule),
     canActivate : [AngularFireAuthGuard],data : {authGuardPipe : redirectToLogin}
   },
+  {
+    path: 'add-imagem-pet/:id',
+    loadChildren: () => import('./pages/add-imagem-pet/add-imagem-pet.module').then( m => m.AddImagemPetPageModule),
+    canActivate : [AngularFireAuthGuard],data : {authGuardPipe : redirectToLogin}
+  },
+
 
 ];
 

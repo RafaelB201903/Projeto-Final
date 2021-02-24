@@ -12,6 +12,35 @@
 
 <ion-content>
 
+  <div class="area-perfil">
+    <ion-row>
+      <ion-col col-3>
+        
+      </ion-col>
+      <ion-col id="header" col-3>
+        <img src="{{pet.imagem}}" />
+      </ion-col>
+      <ion-col col-3>
+       
+      </ion-col>
+    </ion-row>
+
+    <ion-row id="header">
+      <h1>{{pet.nomedopet}}</h1>
+    </ion-row>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Alterar foto</ion-card-title>
+      <ion-card-subtitle>Clique abaixo e adiciona uma foto do seu pet</ion-card-subtitle>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-button (click)="visualizarAddImagem()" expand="full" >alterar foto</ion-button>
+    </ion-card-content>
+    </ion-card>
+
   <ion-card>
   
   <ion-grid>

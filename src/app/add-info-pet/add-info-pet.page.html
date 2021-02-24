@@ -86,7 +86,28 @@
     <ion-input type="text" formControlName="celular" placeholder="(00) 90000-0000"></ion-input>
   </ion-item>
 
+  <br>
 
+  
+  <ion-card>
+    <ion-card id="info">
+
+      <ion-text>Adicione abaixo uma foto do seu pet (essa ação é opcional). </ion-text>
+   
+     </ion-card>
+  
+
+
+     <ion-row>
+      <img src="{{pet.imagem}}" alt="">
+    </ion-row>
+
+<ion-item>
+  <input type="file" (change)="enviarArquivo($event)" />
+</ion-item>
+
+  
+  </ion-card>
 
 
   <ion-button (click)="cadastrar()" shape="round" expand="full" color="success">Salvar</ion-button>
