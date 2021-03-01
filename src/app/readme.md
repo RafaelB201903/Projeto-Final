@@ -335,3 +335,8 @@ relatorio 24/02/2021 --------------------------------------------------------
 
 -Alterar o menu;
 
+relatorio 01/03/2021 ----------------------------
+
+-Ajustar a imagem do perfil;
+
+-Ajustar a imagem do perfil pet;

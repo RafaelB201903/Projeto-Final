@@ -72,6 +72,6 @@ export class VerMaisPetshopPage implements OnInit {
       })
     })
 
- }
+  }
 
 }

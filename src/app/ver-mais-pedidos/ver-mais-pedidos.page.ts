@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Pedido } from '../model/pedido';
 import { Petshop } from '../model/petshop';
 import { Pet } from '../model/pet';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-ver-mais-pedidos',
@@ -25,13 +26,15 @@ export class VerMaisPedidosPage implements OnInit {
 
   petshop: Petshop = new Petshop();
   idpet : string = "";
+  idUser: any = "";
 
   constructor(private PedidoService : PedidoService,
     private navCtrl : NavController,
     private auth : AngularFireAuth,
     private route: ActivatedRoute,
     private servicepetshop : PetshopService,
-    private petservice : PetService) { 
+    private petservice : PetService,
+    public storage: AngularFireStorage) { 
     
 
     this.route.paramMap.subscribe(url=>{
@@ -53,13 +56,15 @@ export class VerMaisPedidosPage implements OnInit {
 
         this.idpet = response.pet;
         console.log(this.idpet + " PET ID");
+
+        this.idUser = this.idpet;
         
         this.pedido.setData(response);//envia os dados para o html
      
         //listar as informações do pet
         this.petservice.petPorIdVerMaisPedido(this.idpet).subscribe(response=>{
-          this.idpet = response;
-          console.log(this.idpet);
+        
+          this.dowloadImage();
 
           this.pet.setData(response);
         })
@@ -81,5 +86,19 @@ export class VerMaisPedidosPage implements OnInit {
 
   ngOnInit() {
   }
+
+  dowloadImage(){
+
+    this.storage.storage.ref().child(`pet/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+      this.pet.imagem = response;
+      console.log("puxou do banco")
+    }).catch(response=>{
+      this.storage.storage.ref().child(`pet/dog.png`).getDownloadURL().then(response=>{
+        this.pet.imagem = response;
+        console.log("nao puxou do banco")
+      })
+    })
+
+ }
 
 }

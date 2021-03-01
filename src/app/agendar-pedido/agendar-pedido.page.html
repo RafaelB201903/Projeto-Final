@@ -37,7 +37,7 @@
     
 
     <ion-item>
-      <ion-label>Serviço</ion-label>
+      <ion-label>*Serviço</ion-label>
       <ion-select formControlName="servico">
         <ion-select-option value="banho">{{petshop.servico1}}</ion-select-option>
         <ion-select-option value="tosa">{{petshop.servico2}}</ion-select-option>
@@ -46,7 +46,7 @@
     </ion-item>
 
     <ion-item>
-          <ion-label>Pet</ion-label>
+          <ion-label>*Pet</ion-label>
           <ion-select formControlName="pet" >
             <ion-select-option *ngFor="let pet of listaPet" value="{{pet.id}}">{{pet.nomedopet}}</ion-select-option>
             
@@ -54,15 +54,19 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>Data</ion-label>
+      <ion-label>*Data</ion-label>
       <ion-input type="date" formControlName="data_sugerido"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label>Horario</ion-label>
+      <ion-label>*Horario</ion-label>
       <ion-input type="time" formControlName="horario_sugerido"></ion-input>
     </ion-item>
 
+    <ion-item>
+      <ion-label position="floating" type="text">Descrição</ion-label>
+      <ion-textarea formControlName="descricao" placeholder="Adicione aqui uma descrição como: tipo de corte, preferencia de shampoo, etc."></ion-textarea>
+    </ion-item>
 
     <br>
 

@@ -148,7 +148,8 @@ export class AgendarPedidoPage implements OnInit {
       horario_entrega: [this.horario_entrega],
       nome_pet: [],
       endereco: [this.endereco],
-      nome_cliente: [this.nome_cliente]
+      nome_cliente: [this.nome_cliente],
+      descricao: []
       
       
      

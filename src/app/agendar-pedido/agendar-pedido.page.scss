@@ -23,6 +23,8 @@ ion-toolbar{
 
         height:120px ;
         width:120px ;
+        border-radius: 50%;
+        border: 0px solid #ffffff;
     }
 
     h1 {
@@ -31,4 +33,8 @@ ion-toolbar{
     }
     p{
         text-align: center;
+    }
+
+    div{
+        color: yellow;
     }
